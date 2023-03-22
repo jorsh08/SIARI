@@ -1,113 +1,74 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView } from 'react-native'
-import React, {useEffect} from 'react'
+import { StyleSheet, Text, View, Image } from 'react-native'
+import React from 'react'
 
-const Lugar = (  {titulo, direccion, horario, puntuacion, navigation, route} ) => {
-    
+const Lugar = ({nombre, imagen, persona, direccion, horario, tipo}) => {
   return (
-    <View style={[styles.mainView]}>
-        <Image
-          style={[styles.imgView]}
-          resizeMode="contain"
-          height={"100%"}
-          source={require("../assets/lagunanainari.png")}
-        />
-      
-      <View style={[styles.infoView]}>
-        <Text style={[styles.txtTitulo]}>
-          Laguna del Nainari {titulo}
-        </Text>
-          
-        <View style={[styles.dir]}>
-          <Image
-            style={ [styles.iconos]}
-            resizeMode="contain"
-            
-            source={require("../assets/localizacion.png")}
-          />
-          <Text style={[styles.txt]}>
-              Av. Vicente Guerreo SN {direccion}
-            </Text>
+    <View style={styles.contenedor}>
         
+        <View style={{flexDirection: 'column'}}>
+            <Image
+                source={{uri: imagen}}
+                style={styles.a}
+                resizeMode="contain"/>
         </View>
-
-        <View style={[styles.horario]}>
-          <Image
-            style={[styles.iconos]}
-            resizeMode="contain"
-            source={require("../assets/cronografo.png")}
-          />
-          <Text style={[styles.txt]}>
-            Lun-Dom 00:00-00:00 {horario}
-          </Text>
-          
+        <View style={{flexDirection: 'column', marginLeft: 20}}>
+            <View style={{flexDirection: 'column'}}>
+                <View style={styles.titulo}>
+                    <Text style={{fontWeight: 'bold', fontSize: 16}} >{nombre}</Text>
+                </View>
+            </View>
+            <View style={styles.informacion}>
+                <View style={{flexDirection: 'row'}}>
+                    <Text>{persona}</Text>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                    <Text>{direccion}</Text>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                    <Text>{horario}</Text>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                    <Text>{tipo}</Text>
+                </View>
+            </View>
+            
         </View>
-
-        <View style={[styles.punt]}>
-          <Image
-            style={[styles.iconos]}
-            resizeMode="contain"
-            source={require("../assets/starcolor.png")}
-          />
-          <Text style={[styles.txt, styles.puntTxt]}>4.8 {puntuacion}</Text>
-          <Image
-            style={[styles.iconos]}
-            resizeMode="contain"
-            source={require("../assets/corazonblanco1.png")}
-          />
-        </View>
-      </View>
     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  mainView:{
-    marginTop:"7%",
-    flexDirection: "row",
-    flex: 1,
-    marginHorizontal: "8%",
-  },
-  imgView:{
-    position: "relative",
-    flex: 4,
-    alignSelf:"center",
-    maxHeight: 90,
-  },
-  infoView:{
-    position: "relative",
-    flexDirection:'column',
-    alignItems:"flex-start",
-    flex: 7,
-  },
-  txtTitulo:{
-    fontSize: 16,
-    fontFamily: "SF UI Text",
-    color: "#f85d5a",
-
-  }, dir:{
-    flexDirection:'row',
-  }, horario:{
-    flexDirection:'row',
-  }, punt:{
-    flexDirection:'row',
-  }, txt:{
-    fontSize: 13,
-    fontFamily: "SF UI Text",
-    color: "#8e7962",
-    textAlign: "left",
-    paddingLeft: 5,
-    flex:9,
-    margin:"1%",
-  },puntTxt:{
-    flex:8,
-  }, 
-  iconos:{
-    flex:1,
-    height:18,
-    margin: "1%",
-  }
-  
-
-})
-
 export default Lugar
+
+const styles = StyleSheet.create({
+    contenedor: {
+        width: 330,
+        height: 150,
+        backgroundColor: '#EBDFD2',
+        margin: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderRadius: 20,
+        shadowColor: "#000",
+        elevation: 5
+    },
+    titulo: {
+        width: 150,
+        height: 40,
+        alignItems: 'center',
+        flexDirection: 'row'
+    },
+    informacion: {
+        flexDirection: 'column',
+        width: 150,
+        height: 80,
+        marginTop: 5
+    },
+    a: {
+        width: 120,
+        height: 120, 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        borderRadius: 100,
+    }
+})

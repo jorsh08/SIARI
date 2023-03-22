@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react'
-import PutosTuristicos from '../Data/datosLugares'
+import PutosTuristicos from '../Data/datosLugaresMapa'
 import Eventos from '../Data/datosEventos'
 
 export const AuthContext = createContext()
