@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { FiltroProvider } from '../../Contextos/Lugares'
 import Encabezado from '../Encabezado'
 import Filtro from '../Filtro'
-import Tabs from '../Tabs'
+import Tabs from './Tabs'
 import Lista from './Lista'
 
 const tabs = [
@@ -39,11 +39,9 @@ const Lugares = () => {
         <View style={[styles.fondo, {flexDirection: 'row'}]}>
             <ScrollView >
                 <View style={{ alignItems: 'center', flexDirection: 'column'}}>
-                    
                     <Encabezado titulo={'Lugares'}/>
                     <Filtro />
                     <Tabs items={tabs}/>
-                    
                 </View>
             </ScrollView>
         </View>

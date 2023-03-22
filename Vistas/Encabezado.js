@@ -7,7 +7,7 @@ const Encabezado = ({titulo}) => {
     <View style={[styles.titulo, {flexDirection: 'row'}]}>
         <View style={{flexDirection: 'column'}}>
             <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: 20}}>
-                <Text style={{color:'#8E7962', fontSize: 26}}>{titulo}</Text>
+                <Text style={{color:'#8E7962', fontSize: 26, color: '#F85D5A'}}>{titulo}</Text>
             </View>
             <View style={{flexDirection: 'row'}}>
                 <View style={{width: 300, height: 1, backgroundColor: '#8E7962'}}/>

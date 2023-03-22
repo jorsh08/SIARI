@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext, useState } from 'react'
-import {ContextFil} from '../Contextos/Lugares'
+import {ContextFil} from '../../Contextos/Lugares'
 
 const Tabs = ({items}) => {
 

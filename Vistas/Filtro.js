@@ -17,7 +17,7 @@ const Filtro = () => {
                         source={require("../assets/buscar.png")}/>
                 </View>
                 <View style={{flexDirection: 'column'}}>
-                    <TextInput style={styles.inputText} placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
+                    <TextInput style={styles.inputText} placeholderTextColor="#8E796250"  placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
                 </View>
             </View>
         </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     },
     filtro: {
         justifyContent: 'center',
-        width: 200,
+        width: 250,
         height: 50,
         backgroundColor: '#EBDFD2',
         borderRadius: 15,
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 130,
         height: 50,
-        top: 5
+        top: 5,
+        color:'#8E7962'
     },
     iconFiltro:{
         width: 28,
