@@ -33,12 +33,12 @@ const tabs = [
     }
 ]
 
-const Lugares = ({navigation}) => {
+const Lugares = () => {
   return (
     <FiltroProvider>
         <View style={[styles.fondo, {flexDirection: 'row'}]}>
             <ScrollView >
-                <View style={{ alignItems: 'center'}}>
+                <View style={{ alignItems: 'center', flexDirection: 'column'}}>
                     
                     <Encabezado titulo={'Lugares'}/>
                     <Filtro />

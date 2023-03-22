@@ -15,18 +15,26 @@ const Tabs = ({items}) => {
 
   return (
     <View style={styles.contenedor}>
-        {(filtro) ?
-        <View style={styles.tabs}>
-            {items.map((item, i)=>{
-                return (
-                    <TouchableOpacity style={styles.tab} key={item.titulo} onPress={() => seleccion(i) }>
-                        <Text>{item.titulo}</Text>
-                    </TouchableOpacity>
-                )
-            })}
-        </View> : <View></View>}
-    <Text style={{margin: 10, fontWeight: 'bold'}}>{items[index].titulo}</Text>    
-    {items[index].content()} 
+        <View style={styles.filtro}>
+            <View style={{flexDirection: 'column', width: 90}}>
+                <Text style={{fontWeight: 'bold', fontSize: 14, color: '#8E7962'}}>{items[index].titulo}</Text> 
+            </View>
+            <View style={{flexDirection: 'column', width: 260, alignItems: 'flex-end'}}>
+                {(filtro) ?
+                <View style={styles.tabs}>
+                    {items.map((item, i)=>{
+                        return (
+                            <TouchableOpacity style={styles.tab} key={item.titulo} onPress={() => seleccion(i) }>
+                                <Text style={{color:'#8E7962'}}>{item.titulo}</Text>
+                            </TouchableOpacity>
+                        )
+                    })}
+                </View> : <View></View>}
+            </View>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+            {items[index].content()} 
+        </View>
     </View>
   )
 }
@@ -35,12 +43,20 @@ export default Tabs
 
 const styles = StyleSheet.create({
     contenedor: {
-        flex: 1
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center'
+    },
+    filtro: {
+        flexDirection: 'row', 
+        height: 40,
+        marginTop: 15,
+        marginBottom: 5,
+        width: 350,
+        alignItems: 'center'
     },
     tabs: {
         flexDirection: 'row',
-        paddingBottom: 20,
-        paddingHorizontal: 30
     },
     tab: {
         paddingHorizontal: 5

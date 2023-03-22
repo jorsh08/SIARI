@@ -14,7 +14,7 @@ const Lugar = ({nombre, imagen, persona, direccion, horario, tipo}) => {
         <View style={{flexDirection: 'column', marginLeft: 20}}>
             <View style={{flexDirection: 'column'}}>
                 <View style={styles.titulo}>
-                    <Text style={{fontWeight: 'bold', fontSize: 16}} >{nombre}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16, color: '#F85D5A'}} >{nombre}</Text>
                 </View>
             </View>
             <View style={styles.informacion}>
