@@ -1,11 +1,13 @@
-import { Text, ScrollView, View, Image, StyleSheet } from 'react-native'
-import React, {useState} from 'react'
+import { Text, View, Image, StyleSheet } from 'react-native'
+import React, {useContext} from 'react'
+import { contextoEventos } from '../../Contextos/Eventos';
 
-const ListadoEventos = ({eventos, tEventos}) => {
+const ListadoEventos = () => {
     
+    const { eventos, tEventos } = useContext(contextoEventos)
 
   return (
-        <ScrollView style={styles.contenidoSV}>
+        <View style={{width: '100%', height: '100%'}}>
             {eventos.map(element =>(
                 <View key={element.id} style={{flexDirection: 'row', width: '85%',marginLeft:'7.5%',paddingBottom:25,Height:'20%'}}>
                     <View style={{flex:1, alignItems:'flex-start', justifyContent:'flex-start'}}>
@@ -44,7 +46,7 @@ const ListadoEventos = ({eventos, tEventos}) => {
                     </View>
                 </View>
             ))}
-        </ScrollView>
+        </View>
   )
 }
 const styles = StyleSheet.create({

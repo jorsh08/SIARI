@@ -1,22 +1,22 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
+import { contextoEventos } from '../../Contextos/Eventos';
 
-const SeleccionEventos = ({btnListado, btnCalendario, listado}) => {
+const SeleccionEventos = () => {
+
+    const { btnListado, btnCalendario, listado} = useContext(contextoEventos)
 
   return (
-    <View style={styles.titulo}>
-            <View style={styles.tituloMA}>
-                <Text style={{color:'#F85D5A', fontSize: 26, marginTop:'5%'}}>Eventos</Text>
-            </View>
-            <View style={styles.tituloMB}>
-                <View style={styles.btn1}>
+    <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+            <View style={styles.contenedorBotones}>
+                <View style={{flexDirection: 'column'}}>
                     <TouchableOpacity
                         style={(listado)?styles.btnSeleccionado:styles.btnDeseleccionado}
                         onPress={btnListado}>
                             <Text style={(listado)?styles.btnSeleccionadoText:styles.btnDeseleccionadoText}>Listado</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.btn2}>
+                <View style={{flexDirection: 'column'}}>
                     <TouchableOpacity
                         style={(!listado)?styles.btnSeleccionado:styles.btnDeseleccionado}
                         onPress={btnCalendario}>
@@ -29,41 +29,19 @@ const SeleccionEventos = ({btnListado, btnCalendario, listado}) => {
 }
 
 const styles = StyleSheet.create({
-    titulo:{ //miau
-        flex: 1.75,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    tituloMA:{ //miau
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    tituloMB:{ //miau
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
+    contenedorBotones:{
+        width: 350,
+        height: 100,
         flexDirection: 'row',
+        justifyContent: 'center'
     },
-    btn1:{ //miau
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-        width: '100%',
-        height: '100%'
-    },
-    btn2:{ //miau
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        width: '100%',
-        height: '100%'
-    },
+    
+    
     btnSeleccionado:{ //miau
-        width: '60%',
+        width: 120,
         backgroundColor: '#F85D5A',
         alignItems: 'center',
-        height: '65 %',
+        height: 30,
         justifyContent: 'center',
         borderRadius: 50
     },
@@ -71,9 +49,9 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     btnDeseleccionado:{ //miau
-        width: '60%',
+        width: 120,
         alignItems: 'center',
-        height: '50%',
+        height: 30,
         justifyContent: 'center',
         
     },

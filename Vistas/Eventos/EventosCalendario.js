@@ -1,8 +1,9 @@
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars'
+import {Calendar} from 'react-native-calendars'
 import { LocaleConfig } from 'react-native-calendars'
-import { StyleSheet, Text, ScrollView, View, TouchableOpacity, Image, Button } from 'react-native'
-import React, { useEffect, useReducer, useState } from 'react'
-import { todayBackgroundColor } from 'react-native-calendars/src/style.js'
+import { StyleSheet, Text, ScrollView, View } from 'react-native'
+import React, {useContext} from 'react'
+import { contextoEventos } from '../../Contextos/Eventos';
+
 
 LocaleConfig.locales['Ev'] = {
     monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
@@ -14,8 +15,12 @@ LocaleConfig.defaultLocale = 'Ev';
 
 
 
-const EventosCalendario = ({ marcadores, eventos, marcadoresC }) => (
-    <ScrollView style={{ flex: 1, width: '100%', height: '100%' }}>
+const EventosCalendario = () => {
+
+    const { marcadores, eventos, marcadoresC} = useContext(contextoEventos)
+
+    return (
+        <ScrollView style={{ flex: 1, width: '100%', height: '100%' }}>
         <View style={{ flex: 4, backgroundColor: 'white', width: '90%', marginLeft: '5%' }}>
             {(marcadores.length < 0) ? (<View></View>) : (
                 <Calendar
@@ -45,7 +50,8 @@ const EventosCalendario = ({ marcadores, eventos, marcadoresC }) => (
             </View>
         ))}
     </ScrollView>
-)
+    )
+}
 styles = StyleSheet.create({
     contPrin:{
         flex: 1,

@@ -2,7 +2,7 @@ import { StyleSheet, Text, ScrollView, View, TouchableOpacity, Image } from 'rea
 import React, { useEffect } from 'react'
 import { FiltroProvider } from '../../Contextos/Lugares'
 import Encabezado from '../Encabezado'
-import Filtro from '../Filtro'
+import Filtro from './Filtro'
 import Tabs from './Tabs'
 import Lista from './Lista'
 

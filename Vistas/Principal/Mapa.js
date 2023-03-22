@@ -7,7 +7,7 @@ enableLatestRenderer();
 
 const Mapa = ({navigation}) => {
 
-  const {data} = useContext(AuthContext)
+  const {PuntosTuristicos} = useContext(AuthContext)
 
   const [lista, setLista] = React.useState([])
 
@@ -22,7 +22,7 @@ const Mapa = ({navigation}) => {
 
   async function getLista(){
     let lista = []
-    data.forEach( element => {
+    PuntosTuristicos.forEach( element => {
         lista.push({latitude: parseFloat(element.latitude), longitude: parseFloat(element.longitude), id: element.id, nombre: element.nombre, icono: element.icono, informacion: element.informacion, imagen: element.imagen})
     });
     setLista(lista)

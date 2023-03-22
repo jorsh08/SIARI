@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
 import React, { useContext, useState } from 'react'
-import {ContextFil} from '../Contextos/Lugares'
+import {ContextFil} from '../../Contextos/Lugares'
 
 const Filtro = () => {
 
@@ -14,7 +14,7 @@ const Filtro = () => {
                     <Image
                         style={styles.iconFiltro}
                         resizeMode={"contain"}
-                        source={require("../assets/buscar.png")}/>
+                        source={require('../../assets/buscar.png')}/>
                 </View>
                 <View style={{flexDirection: 'column'}}>
                     <TextInput style={styles.inputText} placeholderTextColor="#8E796250"  placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
