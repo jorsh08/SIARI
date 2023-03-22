@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
 import React, { useContext, useState } from 'react'
-import {ContextFil} from '../Contextos/FiltroContext'
+import {ContextFil} from '../Contextos/Lugares'
 
 const Filtro = () => {
 
-    const {handleFiltro, buscador, setBuscador} = useContext(ContextFil)
+    const {handleFiltro, buscar, setBuscar, buscando} = useContext(ContextFil)
 
   return (
     <View style={[{flexDirection: 'row'}, styles.filtro]}>
-        <TextInput style={styles.inputText} placeholder='Encontrar' value={buscador} onChange={setBuscador}/>
+        <TextInput style={styles.inputText} placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
         <View style={styles.iconFiltro}>
             <TouchableOpacity onPress={()=>{handleFiltro()}}>
                 <Image

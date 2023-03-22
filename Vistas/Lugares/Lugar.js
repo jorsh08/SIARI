@@ -48,9 +48,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        borderRadius: 20,
-        shadowColor: "#000",
-        elevation: 5
     },
     titulo: {
         width: 150,

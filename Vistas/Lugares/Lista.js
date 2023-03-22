@@ -1,12 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import Lugar from './Lugares/Lugar'
-import lugares from '../Data/datosLugares'
-import monumentos from '../Data/datosLugaresMonumentos'
-import recreativos from '../Data/datosLugaresRecreativos'
-import parques from '../Data/datosLugaresRecreativos'
+import React, { useState, useContext } from 'react'
+import Lugar from './Lugar'
+import {ContextFil} from '../../Contextos/Lugares'
 
 const Lista = ({tipo}) => {
+
+    const { lugares, monumentos, recreativos, parques } = useContext(ContextFil)
 
   return (
     <View style={{flexDirection: 'column', justifyContent: 'center'}}>

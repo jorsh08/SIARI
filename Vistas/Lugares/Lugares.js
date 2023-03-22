@@ -1,10 +1,10 @@
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect } from 'react'
-import { FiltroProvider } from '../../Contextos/FiltroContext'
+import { FiltroProvider } from '../../Contextos/Lugares'
 import Encabezado from '../Encabezado'
 import Filtro from '../Filtro'
 import Tabs from '../Tabs'
-import Lista from '../Lista'
+import Lista from './Lista'
 
 const tabs = [
     {
@@ -53,13 +53,7 @@ const Lugares = ({navigation}) => {
 const styles = StyleSheet.create({
     fondo: {
         height: '100%', 
-        backgroundColor: 
-        '#EBDFD2', 
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
+        backgroundColor: '#EBDFD2',
     }
 })
 
