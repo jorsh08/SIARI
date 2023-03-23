@@ -1,5 +1,16 @@
 const eventos = [
     {
+        id: 5,
+        nombre: 'Mexico campeon del mundo',
+        fecha: '2023-02-11',
+        horaI: '18:00',
+        horaF: '20:00',
+        lugar: 'Laguna del Nainari',
+        tipo: 'Nocturno',
+        tipoEvento: 1,
+        imagen: 'https://lasillarota.com/u/fotografias/m/2022/11/21/f960x540-373148_447223_4.jpg'
+    },
+    {
         id: 1,
         nombre: 'Show de Luces',
         fecha: '2023-02-11',
@@ -12,25 +23,47 @@ const eventos = [
     },
     {
         id: 2,
-        nombre: 'Evento 1',
+        nombre: 'Puro chiqui',
         fecha: '2023-02-12',
         horaI: '18:00',
         horaF: '20:00',
         lugar: 'Laguna del Nainari',
         tipo: 'Nocturno',
         tipoEvento: 1,
-        imagen: 'https://i.ytimg.com/vi/h-YzQKtyStQ/maxresdefault.jpg',
+        imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t39.30808-6/315910727_114811768111835_1566720683622016667_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Q-sPH_MK1SIAX_aYWZ6&_nc_oc=AQlcIL1KMx-fe0BwPWLks_z56TNvoDu7_q1GvpYk0hc_5v1P9xAcNXdWkTA50vvXtVxRWAOSSaveecsyYchnEh0u&_nc_ht=scontent.fcen1-1.fna&oh=00_AfBdNRsHGyiK-jxqy333DzYxDKVzrHYV5XctrmkUbtHXHw&oe=64208B12',
     },
     {
         id: 3,
-        nombre: 'Show de Luces',
+        nombre: 'Tecate sonora',
         fecha: '2023-02-11',
         horaI: '18:00',
         horaF: '20:00',
         lugar: 'Laguna del Nainari',
         tipo: 'Recreativo',
         tipoEvento: 1,
-        imagen: 'https://i.ytimg.com/vi/h-YzQKtyStQ/maxresdefault.jpg',
+        imagen: 'https://www.periodicodigitalgratis.com/gratis/imagen/14851_20181030011043.jpg',
+    },
+    {
+        id: 7,
+        nombre: 'Animecon',
+        fecha: '2023-02-11',
+        horaI: '18:00',
+        horaF: '20:00',
+        lugar: 'Laguna del Nainari',
+        tipo: 'Recreativo',
+        tipoEvento: 1,
+        imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t1.18169-9/28377448_1715725358486703_930750524001893245_n.png?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=xUvc_zHMxB4AX9VOtqL&_nc_ht=scontent.fcen1-1.fna&oh=00_AfBA1b3gfj8ps6leYbpsc4i_u2E0Lk-cah3t-_bEg5SKoA&oe=6443F0FF'
+    },
+    {
+        id: 8,
+        nombre: 'Fiesta',
+        fecha: '2023-02-12',
+        horaI: '18:00',
+        horaF: '20:00',
+        lugar: 'Laguna del Nainari',
+        tipo: 'Nocturno',
+        tipoEvento: 1,
+        imagen: 'https://i1.sndcdn.com/artworks-000608069530-yxeraw-t500x500.jpg',
     },
     {
         id: 4,
@@ -42,7 +75,19 @@ const eventos = [
         tipo: 'Recreativo',
         tipoEvento: 1,
         imagen: 'https://i.ytimg.com/vi/h-YzQKtyStQ/maxresdefault.jpg',
-    }
+    },
+    {
+        id: 6,
+        nombre: 'Desfile primavera',
+        fecha: '2023-02-11',
+        horaI: '18:00',
+        horaF: '20:00',
+        lugar: 'Laguna del Nainari',
+        tipo: 'Recreativo',
+        tipoEvento: 1,
+        imagen: 'https://www.elimparcial.com/__export/1556947379800/sites/elimparcial/img/2016/03/21/1381412-N.JPG_554688468.jpg'
+    },
+   
     ]
     
     export default eventos

@@ -41,7 +41,7 @@ const ListadoEventos = () => {
                                     <View style={{flex: 5}}></View>
                                 </View>
                                 <View style={{flex:1, height:'100%', justifyContent:'flex-end', alignItems:'flex-start'}}>
-                                    <Image style={{width:'70%', resizeMode: 'contain', height:'25%',marginBottom:'10%'}} source={require('../../assets/campana.png')}/>
+                                    <Image style={{width:24, resizeMode: 'contain', height:24,marginBottom:'10%'}} source={require('../../assets/campana.png')}/>
                                 </View>
                             </View>
                         </View>
