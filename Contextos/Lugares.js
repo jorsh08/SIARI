@@ -12,7 +12,7 @@ export const FiltroProvider = ({children}) => {
     const [filtro, setFiltro] = useState(true)
     const [buscar, setBuscar] = useState('')
     const [lugares, setLugares] = useState(dataLugares)
-    const [tabs] = useState(['Todo', 'Monumentos', 'Recreativos', 'Parques'])
+    const [tabs] = useState(['Todo', 'Monumentos', 'Recreativos', 'Parques', 'Test'])
     const [Tab, setTab] = useState('Todo')
 
     const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }

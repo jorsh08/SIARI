@@ -8,7 +8,7 @@ const Filtro = () => {
 
   return (
     <View style={{flexDirection: 'row'}}>
-        <View style={[{flexDirection: 'column'}, styles.filtro]}>
+        <View style={styles.filtro}>
             <View style={{flexDirection: 'row'}}>
                 <View style={{flexDirection: 'column'}}>
                     <Image
@@ -20,6 +20,14 @@ const Filtro = () => {
                     <TextInput style={styles.inputText} placeholderTextColor="#8E796250"  placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
                 </View>
             </View>
+        </View>
+        <View style={{flexDirection: 'column'}}>
+            <TouchableOpacity style={styles.botonFiltros} onPress={()=>{handleFiltro()}}>
+                <Image
+                source={require('../../assets/Filterlist.png')}
+                resizeMode={'cover'}
+                style={{width: 24, height: 24}}/>
+            </TouchableOpacity>
         </View>
     </View>
   )
@@ -47,6 +55,7 @@ const styles = StyleSheet.create({
         elevation: 8,
     },
     filtro: {
+        flexDirection: 'column',
         justifyContent: 'center',
         width: 250,
         height: 50,

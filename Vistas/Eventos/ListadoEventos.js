@@ -7,7 +7,7 @@ const ListadoEventos = () => {
     const { eventos} = useContext(contextoEventos)
 
   return (
-        <View style={{width: '100%', height: '100%', marginTop: 25}}>
+        <View style={{width: '100%', height: '100%', marginTop: 10}}>
             {eventos.map(element =>(
                 <TouchableOpacity key={element.id} >
                     <View  style={{flexDirection: 'row', width: '85%',marginLeft:'7.5%',paddingBottom:25,Height:'20%'}}>

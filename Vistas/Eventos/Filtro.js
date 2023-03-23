@@ -7,7 +7,7 @@ const Filtro = () => {
     const {handleFiltro, buscar, setBuscar, buscando} = useContext(contextoEventos)
 
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{flexDirection: 'row', marginBottom: 5}}>
         <View style={[{flexDirection: 'column'}, styles.filtro]}>
             <View style={{flexDirection: 'row'}}>
                 <View style={{flexDirection: 'column'}}>
@@ -24,7 +24,10 @@ const Filtro = () => {
         
         <View style={{flexDirection: 'column'}}>
             <TouchableOpacity style={styles.botonFiltros} onPress={()=>{handleFiltro()}}>
-                <Text>+</Text>
+                <Image
+                    source={require('../../assets/Filterlist.png')}
+                    resizeMode={'cover'}
+                    style={{width: 24, height: 24}}/>
             </TouchableOpacity>
         </View>
     </View>

@@ -7,14 +7,13 @@ export const contextoEventos = createContext()
 
 export const EventosProvider = ({children}) => {
     
-    const [tEventos, setTEventos] = React.useState([])
     const [marcadores, setMarcadores] = React.useState({})
     const [marcadoresC, setMarcadoresC] = React.useState([])
     const [listado, setListado] = useState(true)
     const [filtro, setFiltro] = useState(true)
     const [buscar, setBuscar] = useState('')
     const [eventos, setEventos] = React.useState(Eventos)
-    const [tabs] = useState(['Todo', 'Recreativo', 'Nocturno'])
+    const [tabs] = useState(['Todo', 'Recreativo', 'Nocturno', 'Test', 'Test1'])
     const [Tab, setTab] = useState('Todo')
 
     const btnListado = () => setListado(true)
@@ -66,7 +65,6 @@ export const EventosProvider = ({children}) => {
             }
         }
     }
-    
 
     function sMarcadores () {
       let marcadores = {};
@@ -95,7 +93,6 @@ export const EventosProvider = ({children}) => {
         }
 
     useEffect(()=>{
-        setTEventos(["hola","Recreativo"]);
         sMarcadores()
     },[]);
 
@@ -103,7 +100,6 @@ export const EventosProvider = ({children}) => {
         <contextoEventos.Provider 
         value={{
             eventos,
-            tEventos,
             listado,
             marcadores,
             marcadoresC,
