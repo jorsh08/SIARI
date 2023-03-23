@@ -20,18 +20,17 @@ const EventosCalendario = () => {
     const { marcadores, eventos, marcadoresC} = useContext(contextoEventos)
 
     return (
-        <ScrollView style={{ flex: 1, width: '100%', height: '100%' }}>
-        <View style={{ flex: 4, backgroundColor: 'white', width: '90%', marginLeft: '5%' }}>
-            {(marcadores.length < 0) ? (<View></View>) : (
-                <Calendar
-                    theme={styles.calendarTheme}
-                    markingType={'multi-dot'}
-                    markedDates={marcadores}
-                ></Calendar>
-            )}
-        </View>
+        <View style={{ flex: 1, width: '100%', height: '100%', marginTop: 15, justifyContent: 'center'}}>
+            <View style={{justifyContent: 'center', backgroundColor: 'blue'}}>
+                {(marcadores.length < 0) ? (<View></View>) : (
+                        <Calendar
+                        theme={styles.calendarTheme}
+                        markingType={'multi-dot'}
+                        markedDates={marcadores}/>
+                )}
+            </View>
         <View style={{ flex: 5, alignItems: 'center' }}>
-            <Text style={{ color: '#F85D5A', fontSize: 26, marginTop: '10%' }}>Agenda</Text>
+            <Text style={{ color: '#F85D5A', fontSize: 26, marginVertical: 15 }}>Agenda</Text>
         </View>
         {eventos.map((evento, e) => (
             <View key={evento.id} style={{  flex: 1, width: '90%', height: '50%', backgroundColor: '#ecddcc', flexDirection: 'row', borderRadius: 50, marginBottom: '5%', marginLeft:'5%' }}>
@@ -49,7 +48,7 @@ const EventosCalendario = () => {
                 </View>
             </View>
         ))}
-    </ScrollView>
+    </View>
     )
 }
 styles = StyleSheet.create({

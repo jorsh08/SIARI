@@ -1,17 +1,72 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Eventos from '../Data/datosEventos'
+import EventosNocturnos from '../Data/datosEventosNocturnos'
+import EventosRecreativos from '../Data/datosEventosRecreativos'
 
 export const contextoEventos = createContext()
 
 export const EventosProvider = ({children}) => {
-
-    const [eventos] = React.useState(Eventos)
+    
     const [tEventos, setTEventos] = React.useState([])
     const [marcadores, setMarcadores] = React.useState({})
     const [marcadoresC, setMarcadoresC] = React.useState([])
     const [listado, setListado] = useState(true)
+    const [filtro, setFiltro] = useState(true)
+    const [buscar, setBuscar] = useState('')
+    const [eventos, setEventos] = React.useState(Eventos)
+    const [tabs] = useState(['Todo', 'Recreativo', 'Nocturno'])
+    const [Tab, setTab] = useState('Todo')
+
     const btnListado = () => setListado(true)
     const btnCalendario = () => setListado(false)
+    const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
+
+    const handleTab = (i) => {
+        setTab(i)
+        if (i == 'Recreativo'){
+            setEventos(EventosRecreativos)
+        }
+        if (i == 'Nocturno'){
+            setEventos(EventosNocturnos)
+        }
+        if (i == 'Todo'){
+            setEventos(Eventos)
+        }
+    }
+    
+    const buscando = texto => {
+        if (texto == ''){
+            if (Tab == 'Recreativo'){
+                setEventos(EventosRecreativos)
+            }
+            if (Tab == 'Nocturno'){
+                setEventos(EventosNocturnos)
+            }
+            if (Tab == 'Todo'){
+                setEventos(Eventos)
+            }
+        }else{
+            if (Tab == 'Recreativo'){
+                let auxList = EventosRecreativos.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setEventos(auxList)
+            }
+            if (Tab == 'Nocturno'){
+                let auxList = EventosNocturnos.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setEventos(auxList)
+            }
+            if (Tab == 'Todo'){
+                let auxList = Eventos.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setEventos(auxList)
+            }
+        }
+    }
+    
 
     function sMarcadores () {
       let marcadores = {};
@@ -50,11 +105,20 @@ export const EventosProvider = ({children}) => {
             eventos,
             tEventos,
             listado,
+            marcadores,
+            marcadoresC,
+            filtro,
+            buscar,
+            Tab,
+            tabs,
+            setTab,
+            setBuscar,
             setListado,
             btnListado,
             btnCalendario,
-            marcadores,
-            marcadoresC
+            handleFiltro,
+            buscando,
+            handleTab
         }}>
             {children}
         </contextoEventos.Provider>

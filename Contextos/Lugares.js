@@ -11,45 +11,68 @@ export const FiltroProvider = ({children}) => {
 
     const [filtro, setFiltro] = useState(true)
     const [buscar, setBuscar] = useState('')
-
     const [lugares, setLugares] = useState(dataLugares)
-    const [lugaresPrev] = useState(dataLugares)
-
-    const [monumentos, setMonumentos] = useState(dataMonumentos)
-    const [monumentosPrev] = useState(dataMonumentos)
-
-    const [parques, setParques] = useState(dataParques)
-    const [parquesPrev] = useState(dataParques)
-
-    const [recreativos, setRecreativos] = useState(dataReacreativos)
-    const [recreativosPrev] = useState(dataReacreativos)
+    const [tabs] = useState(['Todo', 'Monumentos', 'Recreativos', 'Parques'])
+    const [Tab, setTab] = useState('Todo')
 
     const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
 
+    const handleTab = (tab) => {
+        setTab(tab)
+        if (tab == 'Recreativo'){
+            setLugares(dataReacreativos)
+        }
+        if (tab == 'Monumentos'){
+            setLugares(dataMonumentos)
+        }
+        if (tab == 'Parques'){
+            setLugares(dataParques)
+        }
+        if (tab == 'Todo'){
+            setLugares(dataLugares)
+        }
+    }
+
     const buscando = texto => {
-        console.log(texto)
         if (texto == ''){
-            setLugares(lugaresPrev)
-            setMonumentos(monumentosPrev)
-            setParques(parquesPrev)
-            setRecreativos(recreativosPrev)
+            if (Tab == 'Recreativos'){
+                setLugares(dataReacreativos)
+            }
+            if (Tab == 'Parques'){
+                setLugares(dataParques)
+            }
+            if (Tab == 'Monumentos'){
+                setLugares(dataMonumentos)
+            }
+            if (Tab == 'Todo'){
+                setLugares(dataLugares)
+            }
         }else{
-            let auxList = dataLugares.filter(item => {
-                return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-            })
-            setLugares(auxList)
-            auxList = dataMonumentos.filter(item => {
-                return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-            })
-            setMonumentos(auxList)
-            auxList = dataParques.filter(item => {
-                return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-            })
-            setParques(auxList)
-            auxList = dataReacreativos.filter(item => {
-                return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-            })
-            setRecreativos(auxList)
+            if (Tab == 'Recreativos'){
+                let auxList = dataReacreativos.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setLugares(auxList)
+            }
+            if (Tab == 'Parques'){
+                let auxList = dataParques.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setLugares(auxList)
+            }
+            if (Tab == 'Monumentos'){
+                let auxList = dataMonumentos.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setLugares(auxList)
+            }
+            if (Tab == 'Todo'){
+                let auxList = dataLugares.filter(item => {
+                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
+                })
+                setLugares(auxList)
+            }
+            
         }
     }
 
@@ -59,12 +82,12 @@ export const FiltroProvider = ({children}) => {
             filtro,
             buscar,
             lugares,
-            monumentos,
-            recreativos,
-            parques,
+            Tab,
+            tabs,
             setBuscar,
             handleFiltro,
-            buscando
+            buscando,
+            handleTab
         }}>
             {children}
         </ContextFil.Provider>

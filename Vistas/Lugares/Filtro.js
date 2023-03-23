@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import {ContextFil} from '../../Contextos/Lugares'
 
 const Filtro = () => {
@@ -20,12 +20,6 @@ const Filtro = () => {
                     <TextInput style={styles.inputText} placeholderTextColor="#8E796250"  placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
                 </View>
             </View>
-        </View>
-        
-        <View style={{flexDirection: 'column'}}>
-            <TouchableOpacity style={styles.botonFiltros} onPress={()=>{handleFiltro()}}>
-                <Text>+</Text>
-            </TouchableOpacity>
         </View>
     </View>
   )

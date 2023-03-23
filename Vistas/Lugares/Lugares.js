@@ -6,33 +6,6 @@ import Filtro from './Filtro'
 import Tabs from './Tabs'
 import Lista from './Lista'
 
-const tabs = [
-    {
-        titulo: 'Todo',
-        content: () => (
-            <Lista tipo={'todos'}/>
-        )
-    },
-    {
-        titulo: 'Monumento',
-        content: () => (
-            <Lista tipo={'monumentos'}/>
-        )
-    },
-    {
-        titulo: 'Recreativo',
-        content: () => (
-            <Lista tipo={'recreativos'}/>
-        )
-    },
-    {
-        titulo: 'Parque',
-        content: () => (
-            <Lista tipo={'parques'}/>
-        )
-    }
-]
-
 const Lugares = () => {
   return (
     <FiltroProvider>
@@ -41,8 +14,10 @@ const Lugares = () => {
                 <View style={{ alignItems: 'center', flexDirection: 'column'}}>
                     <Encabezado titulo={'Lugares'}/>
                     <Filtro />
-                    <Tabs items={tabs}/>
+                    <Tabs/>
+                    <Lista/>
                 </View>
+                    
             </ScrollView>
         </View>
     </FiltroProvider>
@@ -51,7 +26,7 @@ const Lugares = () => {
 const styles = StyleSheet.create({
     fondo: {
         height: '100%', 
-        backgroundColor: '#EBDFD2',
+        backgroundColor: '#efeae4',
     }
 })
 

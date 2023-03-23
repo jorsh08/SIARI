@@ -31,7 +31,7 @@ const SeleccionEventos = () => {
 const styles = StyleSheet.create({
     contenedorBotones:{
         width: 350,
-        height: 100,
+        height: 50,
         flexDirection: 'row',
         justifyContent: 'center'
     },

@@ -4,6 +4,8 @@ import React from 'react'
 import SeleccionEventos from './SeleccionEventos'
 import Encabezado from '../Encabezado';
 import Listado from './Listado';
+import Filtro from './Filtro';
+import Tabs from './Tabs';
 
 const Eventos = () => {
 
@@ -14,6 +16,8 @@ const Eventos = () => {
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
                         <Encabezado titulo={'Eventos'}/>
                         <SeleccionEventos/>
+                        <Filtro/>
+                        <Tabs/>
                     </View>
                         <Listado/>
                 </ScrollView>
