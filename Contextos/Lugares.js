@@ -19,7 +19,7 @@ export const FiltroProvider = ({children}) => {
 
     const handleTab = (tab) => {
         setTab(tab)
-        if (tab == 'Recreativo'){
+        if (tab == 'Recreativos'){
             setLugares(dataReacreativos)
         }
         if (tab == 'Monumentos'){

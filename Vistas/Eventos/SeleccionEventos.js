@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         
     },
     btnDeseleccionadoText:{ //miau
-        color: '#544738'
+        color: '#8E7962'
     },
 })
 

@@ -85,9 +85,10 @@ const InicioDeSesin = () => {
           Continuar con Apple
         </Text>
       </View>
-      <Pressable style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => navigation.navigate("BottomTab")}>
+      
+      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => navigation.navigate("BottomTab")}>
         <Text style={[styles.iniciarText]}>Iniciar </Text>
-      </Pressable>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -267,7 +268,8 @@ const styles = StyleSheet.create({
     flex: 8,
   },
   rectngulo4Pressable: {
-    position: "relative",
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 19,
     backgroundColor: "#f85d5a",
     width: 235,
@@ -275,12 +277,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   iniciarText: {
-    position: "relative",
     fontSize: 20,
     fontWeight: "600",
     fontFamily: "SF UI  Text",
     color: "#e8e8e8",
-    alignSelf: "center",
   },
   inicioDeSesinView: {
     position: "relative",

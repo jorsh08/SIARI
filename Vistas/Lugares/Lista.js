@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View, Pressable } from 'react-native'
 import React, { useContext } from 'react'
 import Lugar from './Lugar'
 import {ContextFil} from '../../Contextos/Lugares'
@@ -10,9 +10,9 @@ const Lista = () => {
   return (
     <View style={{flexDirection: 'column', justifyContent: 'center', marginTop: 10}}>
         {lugares.map(lugar=>(
-            <TouchableOpacity key={lugar.id} onPress={()=>alert('o.0')}>
+            <Pressable key={lugar.id} onPress={()=>alert('o.0')}>
                 <Lugar nombre={lugar.nombre} imagen={lugar.imagen} persona={lugar.persona} direccion={lugar.direccion} horario={lugar.horario} tipo={lugar.tipo}/>
-            </TouchableOpacity>
+            </Pressable>
         ))}
     </View>
   )

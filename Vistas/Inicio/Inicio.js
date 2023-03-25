@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Image, StyleSheet, Text, Pressable } from "react-native";
+import { View, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Inicio = () => {
@@ -22,30 +22,22 @@ const Inicio = () => {
         >{`Estamos listos para llevarte `}</Text>
         <Text style={styles.porCajemeText}>por Cajeme.</Text>
       </Text>
-      <Pressable
-        style={[styles.rectngulo4Pressable, styles.mt62_379999999999995]}
-        onPress={() => navigation.navigate("RegistroDeCuenta")}
-      />
-      <Pressable
-        style={[styles.crearUnaCuenta1, styles.mt_27_62, styles.mb1]}
-        onPress={() => navigation.navigate("RegistroDeCuenta")}
-      >
-        <Text style={styles.crearUnaCuenta}>Crear una cuenta</Text>
-      </Pressable>
-      <Pressable
-        style={[styles.rectngulo5Pressable, styles.mt22_38]}
-        onPress={() => navigation.navigate("InicioDeSesin")}
-      />
-      <Pressable
-        style={[styles.yaTengoUnaCuenta1, styles.mt_27_62, styles.mb1]}
-        onPress={() => navigation.navigate("InicioDeSesin")}
-      >
-        <Text style={styles.yaTengoUnaCuenta}>Ya tengo una cuenta</Text>
-      </Pressable>
-    </View>);
+      <View style={styles.botones}>
+        <TouchableOpacity style={[styles.rectngulo4Pressable]} onPress={() => navigation.navigate("RegistroDeCuenta")}>
+          <Text style={styles.crearUnaCuenta}>Crear una cuenta</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.rectngulo5Pressable} onPress={() => navigation.navigate("InicioDeSesin")}>
+          <Text style={styles.yaTengoUnaCuenta}>Ya tengo una cuenta</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+    );
 };
 
 const styles = StyleSheet.create({
+  botones:{
+    marginTop: 20
+  },
   mt19_38: {
     marginTop: "10%",
   }, mb1: {
@@ -76,26 +68,40 @@ const styles = StyleSheet.create({
     margin: 0,
   }, estamosListosParaLlevarte: {
     position: "relative", fontSize: 16, fontFamily: "SF UI Text", color: "#544738", textAlign: "center", opacity: 0.5,
-  }, rectngulo4Pressable: {
-    position: "relative", borderRadius: 19, backgroundColor: "#f85d5a", width: 235, height: 38,
-  }, crearUnaCuenta: {
-    fontSize: 16, fontFamily: "SF UI Text", color: "#fff", textAlign: "center",
-  }, crearUnaCuenta1: {
-    position: "relative",
-  }, rectngulo5Pressable: {
-    position: "relative",
-    borderRadius: 19,
-    borderStyle: "solid",
+  }, 
+  rectngulo4Pressable: {
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 19, 
+    backgroundColor: "#f85d5a",
+    width: 235, 
+    height: 38,
+  }, 
+  crearUnaCuenta: {
+    fontSize: 16, 
+    fontFamily: "SF UI Text", 
+    color: "#fff"
+  },  
+  rectngulo5Pressable: {
+    borderRadius: 20,
     borderColor: "#f85d5a",
     borderWidth: 1,
     width: 235,
     height: 38,
-    opacity: 0.5,
-  }, yaTengoUnaCuenta: {
-    fontSize: 16, fontFamily: "SF UI Text", color: "#f85d5a", textAlign: "center",
-  }, yaTengoUnaCuenta1: {
-    position: "relative",
-  }, inicioView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10
+  }, 
+  yaTengoUnaCuenta: {
+    fontSize: 16, 
+    fontFamily: "SF UI Text", 
+    color: "#f85d5a", 
+  }, 
+  yaTengoUnaCuenta1: {
+    justifyContent: 'center'
+  }, 
+  inicioView: {
     position: "relative",
     backgroundColor: "#efeae4",
     flex: 1,

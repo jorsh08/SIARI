@@ -1,4 +1,4 @@
-import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { Text, View, Image, StyleSheet, Pressable } from 'react-native'
 import React, {useContext} from 'react'
 import { contextoEventos } from '../../Contextos/Eventos';
 
@@ -9,7 +9,7 @@ const ListadoEventos = () => {
   return (
         <View style={{width: '100%', height: '100%', marginTop: 10}}>
             {eventos.map(element =>(
-                <TouchableOpacity key={element.id} >
+                <Pressable key={element.id} >
                     <View  style={{flexDirection: 'row', width: '85%',marginLeft:'7.5%',paddingBottom:25,Height:'20%'}}>
                         <View style={{flex:1, alignItems:'flex-start', justifyContent:'flex-start'}}>
                             <Image style={styles.imagenEvento} source={{uri: element.imagen}}/>
@@ -46,7 +46,7 @@ const ListadoEventos = () => {
                             </View>
                         </View>
                     </View>
-                </TouchableOpacity>
+                </Pressable>
                 
             ))}
         </View>
