@@ -9,7 +9,7 @@ export const ContextFil = createContext()
 
 export const FiltroProvider = ({children}) => {
 
-    const [filtro, setFiltro] = useState(true)
+    const [filtro, setFiltro] = useState(false)
     const [buscar, setBuscar] = useState('')
     const [lugares, setLugares] = useState(dataLugares)
     const [tabs] = useState(['Todo', 'Monumentos', 'Recreativos', 'Parques'])

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colores } from '../../../Constantes/tema'
 
-const Seguidor = ({nombre, img, apellido}) => {
+const Seguido = ({nombre, img, apellido}) => {
   return (
     <View style={styles.contenedor}>
       <View style={styles.imagen}>
@@ -28,7 +28,7 @@ const Seguidor = ({nombre, img, apellido}) => {
   )
 }
 
-export default Seguidor
+export default Seguido
 
 const styles = StyleSheet.create({
     contenedor: {

@@ -10,7 +10,7 @@ export const EventosProvider = ({children}) => {
     const [marcadores, setMarcadores] = React.useState({})
     const [marcadoresC, setMarcadoresC] = React.useState([])
     const [listado, setListado] = useState(true)
-    const [filtro, setFiltro] = useState(true)
+    const [filtro, setFiltro] = useState(false)
     const [buscar, setBuscar] = useState('')
     const [eventos, setEventos] = React.useState(Eventos)
     const [tabs] = useState(['Todo', 'Recreativo', 'Nocturno', 'Test', 'Test1'])
