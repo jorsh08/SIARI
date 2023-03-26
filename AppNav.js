@@ -11,6 +11,8 @@ import InicioDeSesin from "./Vistas/Inicio/InicioDeSesin";
 import RegistroDeCuenta from "./Vistas/Inicio/RegistroDeCuenta";
 import Perfil from './Vistas/Perfil/Perfil';
 import Lugares from './Vistas/Lugares/Lugares';
+import Seguidores from './Vistas/Perfil/Seguidores/Seguidores';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -66,6 +68,7 @@ export default function AppNav() {
           <Stack.Screen name="PuntoTuristico" component={PuntoTuristico} options={{ headerShown: false }}/>
           <Stack.Screen name="InicioDeSesin" component={InicioDeSesin} options={{ headerShown: false }} />
           <Stack.Screen name="RegistroDeCuenta" component={RegistroDeCuenta} options={{ headerShown: false }} />
+          <Stack.Screen name="Seguidores" component={Seguidores} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
   )

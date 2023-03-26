@@ -1,23 +1,15 @@
-import * as React from "react";
-import { Image, StyleSheet, Text, View, Pressable, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import {  StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-
-
-
-const Perfil= () => {
-  const navigation = useNavigation();
-  const [email, onChangeTextEmail] = React.useState("");
-  const [pass, onChangeTextPass] = React.useState("");
-  const [number, onChangeNumber] = React.useState(null);
-  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
-
-
+const Perfil= ({navigation}) => {
 
   return (
-    <SafeAreaView>
-        
-    </SafeAreaView>
+    <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+      <Text>Perfil</Text>
+      <TouchableOpacity style={{width: 100, height: 60, backgroundColor: '#1cd', justifyContent: 'center', alignItems: 'center', margin: 30}} onPress={()=>navigation.navigate('Seguidores')}>
+        <Text>Seguidores</Text>
+      </TouchableOpacity>
+    </View>
   )};
 
 const styles = StyleSheet.create({

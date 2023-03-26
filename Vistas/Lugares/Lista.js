@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View, Pressable } from 'react-native'
+import { StyleSheet, View, Pressable } from 'react-native'
 import React, { useContext } from 'react'
 import Lugar from './Lugar'
 import {ContextFil} from '../../Contextos/Lugares'
