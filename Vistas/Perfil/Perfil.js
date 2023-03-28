@@ -12,6 +12,9 @@ const Perfil= ({navigation}) => {
       <TouchableOpacity style={{width: 100, height: 60, backgroundColor: '#1cd', justifyContent: 'center', alignItems: 'center', margin: 10}} onPress={()=>navigation.navigate('Seguidos')}>
         <Text>Seguidos</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={{width: 100, height: 60, backgroundColor: '#1cd', justifyContent: 'center', alignItems: 'center', margin: 10}} onPress={()=>navigation.navigate('PerfilEventos')}>
+        <Text>Eventos</Text>
+      </TouchableOpacity>
     </View>
   )};
 

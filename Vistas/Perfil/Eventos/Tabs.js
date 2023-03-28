@@ -1,27 +1,28 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, {useContext} from 'react'
-import { contextoEventos } from '../../Contextos/Eventos';
+import { contextoEventos } from '../../../Contextos/PerfilEventos'
+import { colores } from '../../../Constantes/tema'
 const Tabs = () => {
     
-    const { Tab, tabs, filtro, handleTab } = useContext(contextoEventos)
+    const { tab, tabs, filtro, handleTab } = useContext(contextoEventos)
     
   return (
     <>
         {(filtro)?
-            <View style={{flexDirection: 'row', height: 40, marginTop: 15, marginRight: 10}}>
+            <View style={{flexDirection: 'row', height: 40, marginTop: 25, marginRight: 10}}>
                 <View style={{flexDirection: 'column'}}>
                     <View style={{flexDirection: 'row'}}>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                            {tabs.map((tab, i)=>{
+                            {tabs.map((tabx, i)=>{
                                 return (
-                                    <View key={tab}>
-                                        {(tab == Tab) ? 
-                                            <TouchableOpacity style={styles.seleccionTab}  onPress={() => handleTab(tab) }>
-                                                <Text style={{ fontSize: 14, color: '#efeae4'}}>{tab}</Text>
+                                    <View key={tabx}>
+                                        {(tabx == tab) ? 
+                                            <TouchableOpacity style={styles.seleccionTab}  onPress={() => handleTab(tabx) }>
+                                                <Text style={{ fontSize: 14, color: '#efeae4'}}>{tabx}</Text>
                                             </TouchableOpacity>
                                             :
-                                            <TouchableOpacity style={styles.tab} onPress={() => handleTab(tab) }>
-                                                <Text style={{color:'#F85D5A', fontSize: 14}}>{tab}</Text>
+                                            <TouchableOpacity style={styles.tab} onPress={() => handleTab(tabx) }>
+                                                <Text style={{color:'#F85D5A', fontSize: 14}}>{tabx}</Text>
                                             </TouchableOpacity>
                                         }
                                     </View>
@@ -53,12 +54,12 @@ const styles = StyleSheet.create({
     },
     seleccionTab: {
         flexDirection: 'column',
-        marginHorizontal: 5,
         width: 100,
         height: 30,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
-        backgroundColor: '#F85D5A',
+        marginHorizontal: 5,
+        backgroundColor: colores.Primario
     }
 })

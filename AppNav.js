@@ -13,6 +13,7 @@ import Perfil from './Vistas/Perfil/Perfil';
 import Lugares from './Vistas/Lugares/Lugares';
 import Seguidores from './Vistas/Perfil/Seguidores/Seguidores';
 import Seguidos from './Vistas/Perfil/Seguidos/Seguidos';
+import PerfilEventos from './Vistas/Perfil/Eventos/Eventos'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -71,6 +72,7 @@ export default function AppNav() {
           <Stack.Screen name="RegistroDeCuenta" component={RegistroDeCuenta} options={{ headerShown: false }} />
           <Stack.Screen name="Seguidores" component={Seguidores} options={{ headerShown: false }} />
           <Stack.Screen name="Seguidos" component={Seguidos} options={{ headerShown: false }} />
+          <Stack.Screen name="PerfilEventos" component={PerfilEventos} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
   )

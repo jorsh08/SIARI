@@ -7,12 +7,12 @@ const EncabezadoSecundario = ({titulo}) => {
     const navigation = useNavigation(); 
   return (
     <View style={styles.contenedor}>
-            <View style={{flexDirection: 'column'}}>
+            <View style={{flexDirection: 'column', width: 50, alignItems: 'center'}}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <Text style={{fontSize: 22, color: colores.Secundario}}>X</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{flexDirection: 'column', alignItems: 'center'}}>
+            <View style={{flexDirection: 'column', width: 250}}>
                 <Text style={{color: colores.Primario, fontSize: 26}}>{titulo}</Text> 
             </View>
     </View>
@@ -24,11 +24,10 @@ export default EncabezadoSecundario
 const styles = StyleSheet.create({
     contenedor:{
         flexDirection: 'row',
-        width: 200,
-        height: 50,
+        width: 300,
+        height: 70,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        margin: 20
+        marginTop: 10
     }
 
 })
