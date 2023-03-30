@@ -1,5 +1,5 @@
 import React, {createContext, useState} from 'react'
-import data from '../Data/datosLugaresMapa'
+import data from '../Data/datosLugares'
 
 export const AuthContext = createContext()
 

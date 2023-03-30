@@ -1,4 +1,4 @@
-import { View, ScrollView, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
 import React, { useContext, useEffect } from 'react';
 import MapView, { Marker, PROVIDER_GOOGLE, enableLatestRenderer } from 'react-native-maps';
 import { AuthContext } from '../../Contextos/AuthContext';
@@ -43,16 +43,16 @@ const Mapa = ({navigation}) => {
     <View style={{flex:1, alignItems: 'center'}}>
 
       <MapView
-      provider={PROVIDER_GOOGLE}
-       style={styles.map}
-       onPress={(e) => getCoordenadas(e.nativeEvent.coordinate)}
-       region={{
-         latitude: 27.493875029632616,
-         longitude: -109.9453880265355,
-         latitudeDelta: 0.015,
-         longitudeDelta: 0.0121,
-       }}
-       showsUserLocation
+        provider={PROVIDER_GOOGLE}
+        style={styles.map}
+        onPress={(e) => getCoordenadas(e.nativeEvent.coordinate)}
+        region={{
+          latitude: 27.493875029632616,
+          longitude: -109.9453880265355,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        }}
+        showsUserLocation
         loadingEnabled
         mapType='terrain'
         showsMyLocationButton={false}>
@@ -128,9 +128,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '75%',
-    height: 300,
+    height: 350,
     backgroundColor: 'rgba(148, 128, 106, 0.8)',
-    marginTop: '105%',
+    marginTop: '95%',
     borderRadius: 25,
   },
   contenedorInformacionOculto: {

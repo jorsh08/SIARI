@@ -1,9 +1,9 @@
 import React, {createContext, useState} from 'react'
-import ubicacionesPerfil from '../Data/datosEventosPerfil'
-import ubicacionesAprobados from '../Data/datosEventosPerfilAprobados'
-import ubicacionesDenegados from '../Data/datosEventosPerfilDenegados'
-import ubicacionesFinalizados from '../Data/datosEventosPerfilFinalizados'
-import ubicacionesPendientes from '../Data/datosEventosPerfilPedientes'
+import ubicacionesPerfil from '../Data/Perfil/Lugares/datosLugaresPerfil'
+import ubicacionesAprobados from '../Data/Perfil/Lugares/datosLugaresPerfilAprobados'
+import ubicacionesDenegados from '../Data/Perfil/Lugares/datosLugaresPerfilDenegados'
+import ubicacionesFinalizados from '../Data/Perfil/Lugares/datosLugaresPerfilFinalizados'
+import ubicacionesPendientes from '../Data/Perfil/Lugares/datosLugaresPerfilPendientes'
 
 export const contextoUbicaciones = createContext()
 

@@ -1,9 +1,9 @@
 import React, {createContext, useState} from 'react'
-import eventosPerfil from '../Data/datosEventosPerfil'
-import eventosAprobados from '../Data/datosEventosPerfilAprobados'
-import eventosDenegados from '../Data/datosEventosPerfilDenegados'
-import eventosFinalizados from '../Data/datosEventosPerfilFinalizados'
-import eventosPendientes from '../Data/datosEventosPerfilPedientes'
+import eventosPerfil from '../Data/Perfil/Eventos/datosEventosPerfil'
+import eventosAprobados from '../Data/Perfil/Eventos/datosEventosPerfilAprobados'
+import eventosDenegados from '../Data/Perfil/Eventos/datosEventosPerfilDenegados'
+import eventosFinalizados from '../Data/Perfil/Eventos/datosEventosPerfilFinalizados'
+import eventosPendientes from '../Data/Perfil/Eventos/datosEventosPerfilPedientes'
 
 export const contextoEventos = createContext()
 

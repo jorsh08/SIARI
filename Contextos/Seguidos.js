@@ -1,5 +1,5 @@
 import React, {createContext, useState} from 'react'
-import Seguidos from '../Data/datosSeguidores'
+import Seguidos from '../Data/datosSeguidos'
 
 export const contextoSeguidos = createContext();
 

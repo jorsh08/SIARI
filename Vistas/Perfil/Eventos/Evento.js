@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         height:45, 
         width: 120, 
-        alignItems: 'center',
     },
     tituloEvento: {
         fontSize: 16, 
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         width: 80,
         height: 150,
-        marginTop: 40, 
+        marginTop: 10
     },
     img: {
         width: 125,
