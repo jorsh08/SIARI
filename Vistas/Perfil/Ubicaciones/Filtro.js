@@ -1,10 +1,10 @@
 import { StyleSheet, View, TextInput, Image, TouchableOpacity } from 'react-native'
 import React, { useContext } from 'react'
-import { contextoEventos } from '../../../Contextos/PerfilEventos'
+import { contextoUbicaciones } from '../../../Contextos/PerfilUbicaciones'
 
 const Filtro = () => {
 
-    const { handleFiltro, buscar, setBuscar, buscando} = useContext(contextoEventos)
+    const { handleFiltro, buscar, setBuscar, buscando} = useContext(contextoUbicaciones)
 
   return (
     <View style={{flexDirection: 'row', marginVertical: 20}}>

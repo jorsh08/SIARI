@@ -2,7 +2,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import {colores} from '../../../Constantes/tema'
 
-const Evento = ({nombre, hora, direccion, estado, imagen}) => {
+const Ubicacion = ({nombre, hora, direccion, estado, imagen}) => {
 
   return (
     <View style={styles.contenedor}>
@@ -74,7 +74,7 @@ const Evento = ({nombre, hora, direccion, estado, imagen}) => {
   )
 }
 
-export default Evento
+export default Ubicacion
 
 const styles = StyleSheet.create({
     contenedor: {

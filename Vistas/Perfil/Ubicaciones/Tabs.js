@@ -1,10 +1,10 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, {useContext} from 'react'
-import { contextoEventos } from '../../../Contextos/PerfilEventos'
+import { contextoUbicaciones } from '../../../Contextos/PerfilUbicaciones'
 import { colores } from '../../../Constantes/tema'
 const Tabs = () => {
     
-    const { tab, tabs, filtro, handleTab } = useContext(contextoEventos)
+    const { tab, tabs, filtro, handleTab } = useContext(contextoUbicaciones)
     
   return (
     <>
