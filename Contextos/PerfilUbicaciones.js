@@ -1,8 +1,7 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useEffect, useState} from 'react'
 import ubicacionesPerfil from '../Data/Perfil/Lugares/datosLugaresPerfil'
 import ubicacionesAprobados from '../Data/Perfil/Lugares/datosLugaresPerfilAprobados'
 import ubicacionesDenegados from '../Data/Perfil/Lugares/datosLugaresPerfilDenegados'
-import ubicacionesFinalizados from '../Data/Perfil/Lugares/datosLugaresPerfilFinalizados'
 import ubicacionesPendientes from '../Data/Perfil/Lugares/datosLugaresPerfilPendientes'
 
 export const contextoUbicaciones = createContext()
@@ -12,28 +11,13 @@ export const UbicacionesProvider = ({children}) => {
     const [buscar, setBuscar] = useState('')
     const [ubicaciones, setUbicaciones] = useState(ubicacionesPerfil)
     const [filtro, setFiltro] = useState(false)
-    const [tabs] = useState(['Todos', 'Aprobados', 'Pendientes', 'Finalizados','Denegados'])
+    const [tabs] = useState(['Todos', 'Aprobadas', 'Pendientes', 'Denegadas'])
     const [tab, setTab] = useState('Todos')
 
     const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
 
-    const handleTab = (i) => {
-        setTab(i)
-        if (i == 'Todos'){
-            setUbicaciones(ubicacionesPerfil)
-        }
-        if (i == 'Aprobados'){
-            setUbicaciones(ubicacionesAprobados)
-        }
-        if (i == 'Pendientes'){
-            setUbicaciones(ubicacionesPendientes)
-        }
-        if (i == 'Finalizados'){
-            setUbicaciones(ubicacionesFinalizados)
-        }
-        if (i == 'Denegados'){
-            setUbicaciones(ubicacionesDenegados)
-        }
+    const handleTab = (tab) => {
+        setTab(tab)
     }
 
     const buscando = texto => {
@@ -41,45 +25,36 @@ export const UbicacionesProvider = ({children}) => {
             if (tab=='Todos'){
                 setUbicaciones(ubicacionesPerfil)
             }
-            if (tab=='Aprobados'){
+            if (tab=='Aprobadas'){
                 setUbicaciones(ubicacionesAprobados)
             }
             if (tab=='Pendientes'){
                 setUbicaciones(ubicacionesPendientes)
             }
-            if (tab=='Finalizados'){
-                setUbicaciones(ubicacionesFinalizados)
-            }
-            if (tab=='Denegados'){
+            if (tab=='Denegadas'){
                 setUbicaciones(ubicacionesDenegados)
             }
         }else{
             if (tab=='Todos'){
-                let auxList = eventosPerfil.filter(item => {
+                let auxList = ubicacionesPerfil.filter(item => {
                     return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
                 })
                 setUbicaciones(auxList)
             }
             if (tab=='Aprobados'){
-                let auxList = eventosAprobados.filter(item => {
+                let auxList = ubicacionesAprobados.filter(item => {
                     return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
                 })
                 setUbicaciones(auxList)
             }
             if (tab=='Pendientes'){
-                let auxList = eventosPendientes.filter(item => {
-                    return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-                })
-                setUbicaciones(auxList)
-            }
-            if (tab=='Finalizados'){
-                let auxList = eventosFinalizados.filter(item => {
+                let auxList = ubicacionesPendientes.filter(item => {
                     return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
                 })
                 setUbicaciones(auxList)
             }
             if (tab=='Denegados'){
-                let auxList = eventosDenegados.filter(item => {
+                let auxList = ubicacionesDenegados.filter(item => {
                     return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
                 })
                 setUbicaciones(auxList)
@@ -88,6 +63,9 @@ export const UbicacionesProvider = ({children}) => {
         }
     }
 
+    useEffect(()=>{
+        buscando(buscar)
+    },[tab])
 
     return (
         <contextoUbicaciones.Provider value={{

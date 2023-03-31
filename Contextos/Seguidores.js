@@ -12,7 +12,7 @@ export const SeguidoresProvider = ({children}) => {
         if (texto == ''){
             setSeguidores(Seguidores)
         }else{
-            let auxList = seguidores.filter(item => {
+            let auxList = Seguidores.filter(item => {
                 return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
             })
             setSeguidores(auxList)

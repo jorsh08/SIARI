@@ -11,7 +11,7 @@ const Lista = () => {
     <View style={{flexDirection: 'column'}}>
         {ubicaciones.map(ubicacion => (
             <Pressable key={ubicacion.nombre} onPress={()=>alert('0.o')}>
-                <Ubicacion nombre={ubicacion.nombre} hora={ubicacion.hora} direccion={ubicacion.hora} estado={ubicacion.estado} imagen={ubicacion.imagen} />
+                <Ubicacion nombre={ubicacion.nombre} fecha={ubicacion.fecha} hora={ubicacion.hora} direccion={ubicacion.hora} estado={ubicacion.estado} imagen={ubicacion.imagen} />
             </Pressable>
         ))}
     </View>

@@ -20,17 +20,9 @@ export const EventosProvider = ({children}) => {
     const btnCalendario = () => setListado(false)
     const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
 
-    const handleTab = (i) => {
-        setTab(i)
-        if (i == 'Recreativo'){
-            setEventos(EventosRecreativos)
-        }
-        if (i == 'Nocturno'){
-            setEventos(EventosNocturnos)
-        }
-        if (i == 'Todo'){
-            setEventos(Eventos)
-        }
+    const handleTab = (tab) => {
+        setTab(tab)
+        
     }
     
     const buscando = texto => {
@@ -95,6 +87,10 @@ export const EventosProvider = ({children}) => {
     useEffect(()=>{
         sMarcadores()
     },[]);
+
+    useEffect(()=>{
+        buscando(buscar)
+    },[Tab])
 
     return (
         <contextoEventos.Provider 

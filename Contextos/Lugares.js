@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import dataLugares from '../Data/datosLugares'
 import dataMonumentos from '../Data/datosLugaresMonumentos'
 import dataParques from '../Data/datosLugaresParques'
@@ -19,18 +19,6 @@ export const FiltroProvider = ({children}) => {
 
     const handleTab = (tab) => {
         setTab(tab)
-        if (tab == 'Recreativos'){
-            setLugares(dataReacreativos)
-        }
-        if (tab == 'Monumentos'){
-            setLugares(dataMonumentos)
-        }
-        if (tab == 'Parques'){
-            setLugares(dataParques)
-        }
-        if (tab == 'Todo'){
-            setLugares(dataLugares)
-        }
     }
 
     const buscando = texto => {
@@ -75,6 +63,10 @@ export const FiltroProvider = ({children}) => {
             
         }
     }
+
+    useEffect(()=>{
+        buscando(buscar)
+    },[Tab])
 
     return (
         <ContextFil.Provider

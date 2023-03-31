@@ -18,12 +18,6 @@ const ubicaciones = [
         imagen: 'https://blog.uber-cdn.com/cdn-cgi/image/width=2161,height=1081,quality=80,onerror=redirect,format=auto/wp-content/uploads/2018/12/MX_Vive-como-nunca-antes-Ciudad-de-M%C3%A9xico-con-estos-X-lugares-de-inter%C3%A9s.jpg'
     },
     {
-        nombre: 'Lugar prueba numero 5',
-        fecha: '11-11-2023',
-        estado: 'Finalizado',
-        imagen: 'https://www.westernunion.com/blog/wp-content/uploads/2022/01/5_lugares_turisticos_de_Espana_que_debes_visitar-scaled.jpg'
-    },
-    {
         nombre: 'Probado - lugares tipo',
         fecha: '11-11-2023',
         estado: 'Aprobado',
@@ -53,12 +47,7 @@ const ubicaciones = [
         estado: 'Denegado',
         imagen: 'https://www.unionguanajuato.mx/wp-content/uploads/2021/04/lugares-turisticos-cdmx-1.jpg'
     },
-    {
-        nombre: 'Lugar 4',
-        fecha: '11-11-2023',
-        imagen: 'https://www.viajarcalifornia.com/img/que-visitar-en-california.jpg',
-        estado: 'Finalizado'
-    },
+    
     {
         nombre: 'Lugar 2',
         fecha: '11-11-2023',
@@ -71,12 +60,7 @@ const ubicaciones = [
         imagen: 'https://www.talent-republic.tv/wp-content/uploads/2020/06/AdobeStock_190199072.jpeg',
         estado: 'Aprobado'
     },
-    {
-        nombre: 'Probado - lugares tipo 3',
-        fecha: '11-11-2023',
-        estado: 'Finalizado',
-        imagen: 'https://www.viajabonito.mx/wp-content/uploads/2021/07/lugares-coahuila-50.jpg'
-    },
+    
     {
         nombre: 'Lugar 5',
         fecha: '11-11-2023',
@@ -90,12 +74,7 @@ const ubicaciones = [
         estado: 'Pendiente',
         imagen: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/08/lugares-turisticos-de-hidalgo-prismas-basalticos-stefany-cisneros.jpeg'
     },
-    {
-        nombre: 'P.R.U.E 3',
-        fecha: '11-11-2023',
-        estado: 'Finalizado',
-        imagen: 'https://arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/OTV57RSXVNAXXBZA5SFDHB7JRY.jpg'
-    },
+    
 ]
 
 export default ubicaciones

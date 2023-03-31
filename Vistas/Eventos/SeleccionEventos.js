@@ -35,8 +35,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center'
     },
-    
-    
     btnSeleccionado:{ //miau
         width: 120,
         backgroundColor: '#F85D5A',

@@ -21,8 +21,7 @@ export default Encabezado
 
 const styles = StyleSheet.create({
     titulo:{
-        marginTop: 20,
-        marginBottom: '5%',
+        marginVertical: 20
     }
 
 })

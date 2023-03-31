@@ -1,20 +1,21 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
+import { colores } from '../../Constantes/tema'
 
 const Lugar = ({nombre, imagen, persona, direccion, horario, tipo}) => {
   return (
     <View style={styles.contenedor}>
         {/*Imagen del lugar */}
-        <View style={{flexDirection: 'column', height: 100, justifyContent: 'center'}}>
+        <View style={styles.img}>
             <Image
                 source={{uri: imagen}}
                 style={styles.imagen}
                 resizeMode="contain"/>
         </View>
         {/*Informacion del lugar */}
-        <View style={{flexDirection: 'column', marginLeft: 20, height: 100,width: 200, justifyContent: 'center'}}>
+        <View style={styles.contenedorInformacion}>
             <View style={styles.titulo}>
-                <Text style={{fontSize: 20, color: '#F85D5A'}} >{nombre}</Text>
+                <Text style={styles.tituloLugar} >{nombre}</Text>
             </View>
             <View style={styles.informacion}>
                 <View style={{flexDirection: 'row'}}>
@@ -63,32 +64,46 @@ export default Lugar
 
 const styles = StyleSheet.create({
     contenedor: {
-        width: 380,
-        height: 130,
+        width: 350,
+        height: 150,
         margin: 10,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
     },
+    contenedorInformacion: {
+        flexDirection: 'column', 
+        marginLeft: 10, 
+        height: 125,
+        width: 200,
+    },
     titulo: {
         flexDirection: 'row',
         width: 200,
-        height: 65,
-        alignItems: 'center',
+        height: 45,
+    },
+    tituloLugar: {
+        fontSize: 16,
+        color: colores.Primario, 
+        fontWeight: '500'
     },
     informacion: {
         flexDirection: 'column',
         width: 200,
-        height: 55,
+        height: 80,
         marginBottom: 20,
-        justifyContent: 'center',
     },
     imagen: {
-        width: 100,
-        height: 100, 
+        width: 125,
+        height: 125, 
         justifyContent: 'center', 
         alignItems: 'center', 
         borderRadius: 100,
+    },
+    img: {
+        flexDirection: 'column',
+        height: 125, 
+        justifyContent: 'center',
     }
 })

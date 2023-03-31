@@ -16,7 +16,7 @@ const ListadoEventos = () => {
                         </View>
                         <View style={{flex:2, flexDirection: 'column'}}>
                             <View style={{flex:1}}>
-                                <Text style={{color:'#F85D5A', fontSize: 20, }}>{element.nombre}</Text>
+                                <Text style={{color:'#F85D5A', fontSize: 16, fontWeight: '500'}}>{element.nombre}</Text>
                             </View>
                             <View style={{flexDirection:'row', flex:50}}>
                                 <View style={{flex:5}}>

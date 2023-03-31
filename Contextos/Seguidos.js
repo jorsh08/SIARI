@@ -12,7 +12,7 @@ export const SeguidosProvider = ({children}) => {
         if (texto == ''){
             setSeguidos(Seguidos)
         }else{
-            let auxList = seguidos.filter(item => {
+            let auxList = Seguidos.filter(item => {
                 return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
             })
             setSeguidos(auxList)

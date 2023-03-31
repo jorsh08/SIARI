@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
 import eventosPerfil from '../Data/Perfil/Eventos/datosEventosPerfil'
 import eventosAprobados from '../Data/Perfil/Eventos/datosEventosPerfilAprobados'
 import eventosDenegados from '../Data/Perfil/Eventos/datosEventosPerfilDenegados'
@@ -17,23 +17,8 @@ export const EventosProvider = ({children}) => {
 
     const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
 
-    const handleTab = (i) => {
-        setTab(i)
-        if (i == 'Todos'){
-            setEventos(eventosPerfil)
-        }
-        if (i == 'Aprobados'){
-            setEventos(eventosAprobados)
-        }
-        if (i == 'Pendientes'){
-            setEventos(eventosPendientes)
-        }
-        if (i == 'Finalizados'){
-            setEventos(eventosFinalizados)
-        }
-        if (i == 'Denegados'){
-            setEventos(eventosDenegados)
-        }
+    const handleTab = (tab) => {
+        setTab(tab)
     }
 
     const buscando = texto => {
@@ -88,6 +73,9 @@ export const EventosProvider = ({children}) => {
         }
     }
 
+    useEffect(()=>{
+        buscando(buscar)
+    },[tab])
 
     return (
         <contextoEventos.Provider value={{

@@ -15,9 +15,6 @@ const Seguidor = ({nombre, img, apellido}) => {
         <View style={{flexDirection: 'row'}}>
             <Text style={{color: colores.Secundario, fontSize: 14}}>{apellido}</Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-            <Text style={{color: colores.Secundario, fontSize: 14}}>4.6</Text>
-        </View>
       </View>
       <View style={styles.boton}>
             <TouchableOpacity style={{width: 80, height: 40, backgroundColor: colores.Primario, justifyContent: 'center', alignItems: 'center', borderRadius: 20}}>

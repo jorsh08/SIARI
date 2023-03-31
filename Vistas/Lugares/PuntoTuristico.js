@@ -2,11 +2,11 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import { ViroARScene,ViroText,ViroARSceneNavigator } from '@viro-community/react-viro';
 
-const HelloWorldSceneAR = () => {
+const HelloWorldSceneAR = (props) => {
   const [text, setText] = useState('Iniciando AR...');
 
   function onInitialized(state, reason) {
-    setText('Hola');
+    setText(props.sceneNavigator.viroAppProps.nombre);
   }
 
   return (
@@ -50,15 +50,14 @@ const PuntoTuristico = ({navigation, route}) => {
                     <View style={[{width: '100%', height: '60%'},{flexDirection: 'row'}]}>
                         <ViroARSceneNavigator
                             autofocus={true}
-                            initialScene={{
-                                scene: HelloWorldSceneAR,
-                            }}
+                            initialScene={{ scene: HelloWorldSceneAR }}
+                            viroAppProps={{ nombre: puntoTuristico.nombre }}
                             style={{flex: 1}}/>
                     </View>
                     <View style={[{width: '100%', height: '40%'},{flexDirection: 'row'}]}>
                             <View style={[styles.datosPuntosTuristicos,{flexDirection: 'column'}]}>
-                                <Text>puntoTuristico.puntoDir</Text>
-                                <Text>puntoTuristico.puntoHorario</Text>
+                                <Text>{puntoTuristico.direccion}</Text>
+                                <Text>{puntoTuristico.horario}</Text>
                             </View>
                     </View>
                 </View>

@@ -11,7 +11,7 @@ const Lista = () => {
     <View style={{flexDirection: 'column'}}>
         {eventos.map(evento => (
             <Pressable key={evento.nombre} onPress={()=>alert('0.o')}>
-                <Evento nombre={evento.nombre} hora={evento.hora} direccion={evento.hora} estado={evento.estado} imagen={evento.imagen} />
+                <Evento nombre={evento.nombre} fecha={evento.fecha} hora={evento.hora} direccion={evento.hora} estado={evento.estado} imagen={evento.imagen} />
             </Pressable>
         ))}
     </View>
