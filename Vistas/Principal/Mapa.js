@@ -2,14 +2,13 @@ import { View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
 import React, { useContext, useEffect } from 'react';
 import MapView, { Marker, PROVIDER_GOOGLE, enableLatestRenderer } from 'react-native-maps';
 import { AuthContext } from '../../Contextos/AuthContext';
-import SeleccionMapa from './SeleccionMapa';
 import { colores } from '../../Constantes/tema';
 
 enableLatestRenderer();
 
 const Mapa = () => {
 
-  const { puntoTuristico, getLista, PuntosTuristicos, contenedorInformacion, setContenedorLista, lista, setPuntoTuristicoInfo} = useContext(AuthContext)
+  const { tipoIcono, puntoTuristico, getLista, PuntosTuristicos, contenedorInformacion, setContenedorLista, lista, setPuntoTuristicoInfo} = useContext(AuthContext)
 
   async function mostrarInformacion(infoPuntoTuristico){
     setContenedorLista(true)
@@ -52,7 +51,7 @@ const Mapa = () => {
           style={{width: 80, height: 80}}
         >
           <Image
-            source={{uri: element.icono}}
+            source={tipoIcono[element.tipoIcono]}
             style={{width: 50, height: 50}}
             resizeMode="contain"/>
         </Marker>
@@ -60,14 +59,13 @@ const Mapa = () => {
 
             
      </MapView>
-      <SeleccionMapa/>
       <View style={[contenedorInformacion ? styles.contenedorInformacion : styles.contenedorInformacionOculto, {flexDirection: 'row'}]}>
             <View style={{flexDirection: 'column', height: 125, width: 205, justifyContent: 'center'}}>
               <View style={{flexDirection: 'row', width: 205, height: 62.5,justifyContent: 'center', alignItems: 'center'}}>
                 <Text style={styles.Titulo}>{puntoTuristico.nombre}</Text>
               </View>
               <View style={{flexDirection: 'row', width: 205, height: 62.5,justifyContent: 'center', alignItems: 'center'}}>
-                  <TouchableOpacity onPress={() => /*navigation.navigate('PuntoTuristico', puntoTuristico)*/alert(':D')} style={contenedorInformacion ? styles.verMas : styles.contenedorInformacionOculto}>
+                  <TouchableOpacity onPress={() => /*navigation.navigate('PuntoTuristico', puntoTuristico)*/alert(':o')} style={contenedorInformacion ? styles.verMas : styles.contenedorInformacionOculto}>
                     <Text style={{color: colores.Primario, fontWeight: 'bold'}}>Ver mas</Text>
                   </TouchableOpacity>
               </View>
@@ -115,8 +113,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 360,
     height: 150,
+    marginTop: '140%',
     backgroundColor: colores.LigeroOpacity,
-    marginTop: 420,
     borderRadius: 25,
   },
   contenedorInformacionOculto: {
@@ -145,5 +143,7 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   }
 })
+
+
 
 export default Mapa

@@ -13,6 +13,7 @@ const eventos = [
         latitude: 27.50421489850567, 
         longitude: -109.94831699877977,
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
+        multimedios: [{},{},{}]
     },
     {
         id: 1,
@@ -27,6 +28,7 @@ const eventos = [
         imagen: 'https://i.ytimg.com/vi/h-YzQKtyStQ/maxresdefault.jpg',
         latitude: 27.47952346207034, 
         longitude: -109.9304860085249,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
     },
     {
@@ -41,6 +43,7 @@ const eventos = [
         informacion: '',
         latitude: 27.48434857188219, 
         longitude: -109.94702115654945,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t39.30808-6/315910727_114811768111835_1566720683622016667_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Q-sPH_MK1SIAX_aYWZ6&_nc_oc=AQlcIL1KMx-fe0BwPWLks_z56TNvoDu7_q1GvpYk0hc_5v1P9xAcNXdWkTA50vvXtVxRWAOSSaveecsyYchnEh0u&_nc_ht=scontent.fcen1-1.fna&oh=00_AfBdNRsHGyiK-jxqy333DzYxDKVzrHYV5XctrmkUbtHXHw&oe=64208B12',
     },
@@ -56,6 +59,7 @@ const eventos = [
         informacion: '',
         latitude: 27.481855139047873, 
         longitude: -109.92625180631876,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://www.periodicodigitalgratis.com/gratis/imagen/14851_20181030011043.jpg',
     },
@@ -71,6 +75,7 @@ const eventos = [
         informacion: '',
         latitude: 27.503031311115414, 
         longitude: -109.9408158659935,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t1.18169-9/28377448_1715725358486703_930750524001893245_n.png?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=xUvc_zHMxB4AX9VOtqL&_nc_ht=scontent.fcen1-1.fna&oh=00_AfBA1b3gfj8ps6leYbpsc4i_u2E0Lk-cah3t-_bEg5SKoA&oe=6443F0FF'
     },
@@ -86,6 +91,7 @@ const eventos = [
         informacion: '',
         latitude: 27.478713803283686, 
         longitude: -109.9326029419899,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://i1.sndcdn.com/artworks-000608069530-yxeraw-t500x500.jpg',
     },
@@ -101,6 +107,7 @@ const eventos = [
         tipoEvento: 1,
         latitude: 27.488266624450727, 
         longitude: -109.93789561092854,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://i.ytimg.com/vi/h-YzQKtyStQ/maxresdefault.jpg',
     },
@@ -116,6 +123,7 @@ const eventos = [
         tipoEvento: 1,
         latitude: 27.488266624450727, 
         longitude: -109.93789561092854,
+        multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://www.elimparcial.com/__export/1556947379800/sites/elimparcial/img/2016/03/21/1381412-N.JPG_554688468.jpg'
     },
