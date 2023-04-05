@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, {useEffect, useState} from 'react'
-import { ViroARScene,ViroText,ViroARSceneNavigator } from '@viro-community/react-viro';
-
+import { ViroARScene,ViroText,ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
+import cohete from '../../assets/cohete.obj'
 const HelloWorldSceneAR = (props) => {
   const [text, setText] = useState('Iniciando AR...');
 
@@ -10,13 +10,14 @@ const HelloWorldSceneAR = (props) => {
   }
 
   return (
-    <ViroARScene onTrackingUpdated={onInitialized}>
-      <ViroText
-        text={text}
-        scale={[0.5, 0.5, 0.5]}
-        position={[0, 0, -1]}
-        style={styles.helloWorldTextStyle}
-      />
+    <ViroARScene >
+        <ViroAmbientLight color={'#FFFFFF'}/>
+        <Viro3DObject
+            source={require('../../assets/cohete.obj')}
+            position={[0.0, 0.0, -10]}
+            scale={[0.5, 0.5, 0.5]}
+            type="OBJ"
+        />
     </ViroARScene>
   );
 };
@@ -47,14 +48,14 @@ const PuntoTuristico = ({navigation, route}) => {
 
             <View style={[styles.contenedorPuntoTuristico, {flexDirection: 'column'}]}>
                 <View style={{flexDirection:'column'}}>
-                    <View style={[{width: '100%', height: '60%'},{flexDirection: 'row'}]}>
+                    <View style={[{width: '100%', height: 300},{flexDirection: 'row'}]}>
                         <ViroARSceneNavigator
                             autofocus={true}
                             initialScene={{ scene: HelloWorldSceneAR }}
                             viroAppProps={{ nombre: puntoTuristico.nombre }}
                             style={{flex: 1}}/>
                     </View>
-                    <View style={[{width: '100%', height: '40%'},{flexDirection: 'row'}]}>
+                    <View style={[{width: '100%', height: 300},{flexDirection: 'row'}]}>
                             <View style={[styles.datosPuntosTuristicos,{flexDirection: 'column'}]}>
                                 <Text>{puntoTuristico.direccion}</Text>
                                 <Text>{puntoTuristico.horario}</Text>
