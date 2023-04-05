@@ -7,9 +7,9 @@ import ubicacionesPendientes from '../Data/Perfil/Lugares/datosLugaresPerfilPend
 export const contextoUbicaciones = createContext()
 
 export const UbicacionesProvider = ({children}) => {
-
-    const [buscar, setBuscar] = useState('')
+    
     const [ubicaciones, setUbicaciones] = useState(ubicacionesPerfil)
+    const [buscar, setBuscar] = useState('')
     const [filtro, setFiltro] = useState(false)
     const [tabs] = useState(['Todos', 'Aprobadas', 'Pendientes', 'Denegadas'])
     const [tab, setTab] = useState('Todos')
