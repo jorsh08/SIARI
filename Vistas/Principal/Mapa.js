@@ -20,7 +20,6 @@ const Mapa = ({navigation}) => {
     console.log(c)
   }
 
-
   return (
     <View style={{flex:1, alignItems: 'center'}}>
       <MapView
@@ -37,7 +36,18 @@ const Mapa = ({navigation}) => {
         mapType='terrain'
         showsMyLocationButton={false}>
           {lista.map(element => (
-            <Marcador key={element.id} lon={element.longitude} lat={element.latitude} icono={element.tipoIcono} imagen={element.imagen} nombre={element.nombre}/>
+            <Marcador 
+            key={element.id} 
+            lon={element.longitude} 
+            lat={element.latitude} 
+            icono={element.tipoIcono} 
+            imagen={element.imagen} 
+            nombre={element.nombre}
+            direccion={element.direccion}
+            horario={element.horario}
+            informacion={element.informacion}
+            tipo={element.tipo}
+            />
           ))}
 
             

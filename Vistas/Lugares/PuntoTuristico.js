@@ -2,19 +2,23 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import { ViroARScene,ViroText,ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
 import cohete from '../../assets/cohete.obj'
+import baica from '../../assets/baica.obj'
+
 const HelloWorldSceneAR = (props) => {
   const [text, setText] = useState('Iniciando AR...');
+  const [modelo, setModelo] = useState(cohete)
 
   function onInitialized(state, reason) {
-    setText(props.sceneNavigator.viroAppProps.nombre);
+    console.log(props.sceneNavigator.viroAppProps.tipo)
+    setModelo(Onjetos3D[props.sceneNavigator.viroAppProps.tipo]);
   }
 
   return (
-    <ViroARScene >
+    <ViroARScene onTrackingUpdated={onInitialized}>
         <ViroAmbientLight color={'#FFFFFF'}/>
         <Viro3DObject
-            source={require('../../assets/cohete.obj')}
-            position={[0.0, 0.0, -10]}
+            source={modelo}
+            position={[0.0, 0.0, -7]}
             scale={[0.5, 0.5, 0.5]}
             type="OBJ"
         />
@@ -22,6 +26,11 @@ const HelloWorldSceneAR = (props) => {
   );
 };
 
+const Onjetos3D = {
+    Monumento: cohete,
+    Recreativo: baica,
+    Parque: baica
+}
 
 const PuntoTuristico = ({navigation, route}) => {
 
@@ -52,7 +61,7 @@ const PuntoTuristico = ({navigation, route}) => {
                         <ViroARSceneNavigator
                             autofocus={true}
                             initialScene={{ scene: HelloWorldSceneAR }}
-                            viroAppProps={{ nombre: puntoTuristico.nombre }}
+                            viroAppProps={{ nombre: puntoTuristico.nombre, tipo: puntoTuristico.tipo }}
                             style={{flex: 1}}/>
                     </View>
                     <View style={[{width: '100%', height: 300},{flexDirection: 'row'}]}>

@@ -66,10 +66,10 @@ export const AuthProvider = ({children}) =>  {
       }
     }
 
-    async function mostrarInformacion(imagen, nombre){
+    async function mostrarInformacion(imagen, nombre, direccion, horario, informacion, tipo){
       setContenedorLista(true)
       setFiltro(false)
-      setPuntoTuristicoInfo({nombre: nombre, imagen: imagen})
+      setPuntoTuristicoInfo({nombre: nombre, imagen: imagen, direccion: direccion, horario: horario, informacion: informacion, tipo: tipo})
     }
 
     async function cargarLugares(){
