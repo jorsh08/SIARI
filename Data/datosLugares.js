@@ -9,6 +9,14 @@ const lugares = [
         tipoIcono: 1,
         latitude: 27.480340,
         longitude: -109.941346,
+        ar: {
+            objeto: '../../assets/3d/object_soccer_ball.vrx',
+            recursos: {
+                diffuse: '../../assets/3d/object_soccer_ball_diffuse.png',
+                normal: '../../assets/3d/object_soccer_ball_normal.png',
+                specular: '../../assets/3d/object_soccer_ball_specular.png'
+            }
+        },
         informacion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nisl ut leo cursus sagittis eu ac sem. Mauris quis fermentum nunc, bibendum maximus augue. Ut eu ipsum eu lectus euismod consectetur vel sit amet enim. Suspendisse cursus ut nisl vel auctor. Fusce at est libero. Mauris ut velit lobortis, sollicitudin orci ac, lacinia justo. Vestibulum convallis vulputate metus, non molestie magna porttitor eget. In hac habitasse platea dictumst. Quisque eget ipsum in nunc euismod vehicula. Etiam maximus, velit et sollicitudin placerat, odio est feugiat lectus, laoreet venenatis nisl mi ut enim. Sed id ante at ligula posuere tristique ac nec tortor. Vivamus et posuere lacus. Duis eget malesuada neque, in tincidunt ante. Curabitur consequat odio ipsum, sit amet molestie ligula porta et.',
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
         imagen: 'https://static.wikia.nocookie.net/los-padrinos-magicos4real/images/7/7c/Tumblr_lfu4jdyHQL1qb82q8o1_500_large.jpg/revision/latest?cb=20180328215059&path-prefix=es'

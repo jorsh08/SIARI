@@ -3,8 +3,9 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../../Contextos/AuthContext'
 
 const Filtro = () => {
-    const { handleFiltro, buscar, setBuscar, buscando} = useContext(AuthContext)
-  return (
+    const { handleFiltro, buscar, setBuscar, buscando, ocultarInfoPunto, setContenedorLista,setPuntoTuristicoInfo } = useContext(AuthContext)
+  
+    return (
     <View style={{flexDirection: 'row', justifyContent: 'center'}}>
         <View style={[{flexDirection: 'column'}, styles.filtro]}>
             <View style={{flexDirection: 'row'}}>
@@ -15,13 +16,13 @@ const Filtro = () => {
                         source={require("../../assets/buscar.png")}/>
                 </View>
                 <View style={{flexDirection: 'column'}}>
-                    <TextInput style={styles.inputText} placeholderTextColor="#8E796250" placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
+                    <TextInput style={styles.inputText} onPressIn={()=>ocultarInfoPunto()} placeholderTextColor="#8E796250" placeholder='Encontrar' value={buscar} onChangeText={text => {setBuscar(text); buscando(text);}}/>
                 </View>
             </View>
         </View>
         
         <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <TouchableOpacity style={styles.botonFiltros} onPress={()=>{handleFiltro()}}>
+            <TouchableOpacity style={styles.botonFiltros} onPress={()=>{handleFiltro(); setContenedorLista(false); setPuntoTuristicoInfo('');}}>
                 <Image
                     source={require('../../assets/Filterlist.png')}
                     resizeMode={'cover'}

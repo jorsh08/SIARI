@@ -6,14 +6,14 @@ import iconoParque from '../../assets/1.png'
 import iconoIglesia from '../../assets/2.png'
 import iconoRecreativo from '../../assets/4.png'
 
-const Marcador =  React.memo (({lon, lat, icono, imagen, nombre, direccion, horario, informacion, tipo}) => {
+const Marcador =  React.memo (({lon, lat, icono, imagen, nombre, direccion, horario, informacion, tipo, ar}) => {
     const tipoIcono = [iconoIglesia, iconoRecreativo, iconoParque]
     const { mostrarInformacion } = useContext(AuthContext)
   return (
     <Marker 
         coordinate={{latitude: lat, longitude: lon}}
         image={tipoIcono[icono]}
-        onPress = {() => mostrarInformacion(imagen, nombre, direccion, horario, informacion, tipo)}
+        onPress = {() => mostrarInformacion(imagen, nombre, direccion, horario, informacion, tipo, ar)}
     />
   )
 })

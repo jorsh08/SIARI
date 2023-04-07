@@ -21,6 +21,7 @@ export const AuthProvider = ({children}) =>  {
 
     const handleTab = (tab) => {
       setTab(tab)
+      ocultarInfoPunto()
     }
 
     const buscando = texto => {
@@ -66,10 +67,16 @@ export const AuthProvider = ({children}) =>  {
       }
     }
 
-    async function mostrarInformacion(imagen, nombre, direccion, horario, informacion, tipo){
+    const ocultarInfoPunto = () => {
+        setContenedorLista(false)
+        setPuntoTuristicoInfo('')
+        setFiltro(false)
+    }
+
+    async function mostrarInformacion(imagen, nombre, direccion, horario, informacion, tipo, ar){
       setContenedorLista(true)
       setFiltro(false)
-      setPuntoTuristicoInfo({nombre: nombre, imagen: imagen, direccion: direccion, horario: horario, informacion: informacion, tipo: tipo})
+      setPuntoTuristicoInfo({nombre: nombre, imagen: imagen, direccion: direccion, horario: horario, informacion: informacion, tipo: tipo, ar: ar})
     }
 
     async function cargarLugares(){
@@ -90,6 +97,7 @@ export const AuthProvider = ({children}) =>  {
         filtro,
         tabs,
         tab,
+        ocultarInfoPunto,
         setTab,
         setContenedorLista,
         setPuntoTuristicoInfo,

@@ -11,12 +11,10 @@ enableLatestRenderer();
 
 const Mapa = ({navigation}) => {
 
-  const { puntoTuristico, contenedorInformacion, setContenedorLista, lista, setPuntoTuristicoInfo, setFiltro } = useContext(AuthContext)
+  const { puntoTuristico, contenedorInformacion, ocultarInfoPunto, lista } = useContext(AuthContext)
 
   const getCoordenadas = (c) => {
-    setContenedorLista(false)
-    setPuntoTuristicoInfo('')
-    setFiltro(false)
+    ocultarInfoPunto()
     console.log(c)
   }
 
@@ -47,6 +45,7 @@ const Mapa = ({navigation}) => {
             horario={element.horario}
             informacion={element.informacion}
             tipo={element.tipo}
+            ar={element.ar}
             />
           ))}
 

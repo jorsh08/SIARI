@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         width: 140,
     },
     tituloEvento: {
-        fontSize: 16, 
+        fontSize: 14, 
         color: colores.Primario, 
         fontWeight: '500'
     },

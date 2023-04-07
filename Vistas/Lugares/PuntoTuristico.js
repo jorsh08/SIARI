@@ -1,36 +1,57 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, {useEffect, useState} from 'react'
-import { ViroARScene,ViroText,ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
-import cohete from '../../assets/cohete.obj'
-import baica from '../../assets/baica.obj'
+import { ViroARScene,ViroText, ViroMaterials, ViroAnimations,ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
 
 const HelloWorldSceneAR = (props) => {
   const [text, setText] = useState('Iniciando AR...');
-  const [modelo, setModelo] = useState(cohete)
 
   function onInitialized(state, reason) {
-    console.log(props.sceneNavigator.viroAppProps.tipo)
-    setModelo(Onjetos3D[props.sceneNavigator.viroAppProps.tipo]);
   }
 
   return (
     <ViroARScene onTrackingUpdated={onInitialized}>
         <ViroAmbientLight color={'#FFFFFF'}/>
         <Viro3DObject
-            source={modelo}
-            position={[0.0, 0.0, -7]}
-            scale={[0.5, 0.5, 0.5]}
+            source={require('../../assets/3d/Tuerca/Gear1.obj')}
+            materials={["tuerca"]}
+            //animation={{name: "rotate", run: true, loop: true}}
+            position={[-25, -10, 30]}
+            scale={[2,2,2]}
+            rotation={[1, 1, 0]}
+            type="OBJ"
+        />
+
+        <Viro3DObject
+            source={require('../../assets/3d/PS1MemoryCard_OBJ/MemoryCard.obj')}
+            materials={["memoryCard"]}
+            //animation={{name: "rotate", run: true, loop: true}}
+            position={[-10, -10, 30]}
+            scale={[2,2,2]}
+            rotation={[-5, 10, 10]}
             type="OBJ"
         />
     </ViroARScene>
   );
 };
 
-const Onjetos3D = {
-    Monumento: cohete,
-    Recreativo: baica,
-    Parque: baica
-}
+ViroMaterials.createMaterials({
+    memoryCard: {
+      lightingModel: "Blinn",
+      diffuseTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_C.jpg'),
+      specularTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_S.jpg'),
+      writesToDepthBuffer: true,
+      readsFromDepthBuffer: true,
+    },
+    tuerca: {
+        lightingModel: "Blinn",
+        diffuseTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Diffuse.png'),
+        specularTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Specular.png'),
+        writesToDepthBuffer: true,
+        readsFromDepthBuffer: true,
+      },
+ });
+
+
 
 const PuntoTuristico = ({navigation, route}) => {
 
@@ -61,7 +82,7 @@ const PuntoTuristico = ({navigation, route}) => {
                         <ViroARSceneNavigator
                             autofocus={true}
                             initialScene={{ scene: HelloWorldSceneAR }}
-                            viroAppProps={{ nombre: puntoTuristico.nombre, tipo: puntoTuristico.tipo }}
+                            viroAppProps={{ nombre: puntoTuristico.nombre, tipo: puntoTuristico.tipo, ar: puntoTuristico.ar}}
                             style={{flex: 1}}/>
                     </View>
                     <View style={[{width: '100%', height: 300},{flexDirection: 'row'}]}>
@@ -90,6 +111,18 @@ const PuntoTuristico = ({navigation, route}) => {
     </View>
   )
 }
+
+ViroAnimations.registerAnimations({
+    rotate: {
+      properties: {
+        rotateY: "-=90",
+        rotateX: '+=10',
+      },
+      duration: 1000, //.25 seconds
+    },
+  });
+
+
 const styles = StyleSheet.create({
     contenedorPrincipal: {
         flex:1,
