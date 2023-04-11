@@ -1,5 +1,5 @@
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity, Image } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FiltroProvider } from '../../Contextos/Lugares'
 import Encabezado from '../Encabezado'
 import Filtro from './Filtro'

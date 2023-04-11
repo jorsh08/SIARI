@@ -15,6 +15,7 @@ import Seguidores from './Vistas/Perfil/Seguidores/Seguidores';
 import Seguidos from './Vistas/Perfil/Seguidos/Seguidos';
 import PerfilEventos from './Vistas/Perfil/Eventos/Eventos'
 import PerfilUbicaciones from './Vistas/Perfil/Ubicaciones/Ubicaciones'
+import Notificaciones from './Vistas/Notificaciones/Notificaciones';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,12 +42,20 @@ const BottomTab = () =>{
         else 
           return(<Image resizeMode="contain" style={bt_styles.iconos} source={require("./assets/localizacion1.png")}/>)
       }}}/>
-    <Tab.Screen name="Calendario" component={Eventos} options={{ 
+    
+    <Tab.Screen name="Eventos" component={Eventos} options={{ 
       tabBarIcon: ({focused, color, size}) =>{
         if(focused)
           return(<Image resizeMode="contain" style={bt_styles.iconos} source={require("./assets/calendariorojo.png")}/>)
         else
             return(<Image resizeMode="contain" style={bt_styles.iconos} source={require("./assets/calendario.png")}/>)
+      }}}/>
+    <Tab.Screen name="Notificaciones" component={Notificaciones} options={{ 
+      tabBarIcon: ({focused, color, size}) =>{
+        if(focused)
+            return(<Image resizeMode="contain" style={bt_styles.iconos} source={require("./assets/notificacion-rojo.png")}/>)
+          else
+            return(<Image resizeMode="contain" style={bt_styles.iconos} source={require("./assets/notificacion-cafe.png")}/>)
       }}}/>
     <Tab.Screen name="Perfil" component={Perfil} options={{ 
       tabBarIcon: ({focused, color, size}) =>{
@@ -66,6 +75,7 @@ export default function AppNav() {
           <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }}/>
           <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }}/>
           <Stack.Screen name="Mapa" component={Mapa} options={{ headerShown: false }}/>
+          <Stack.Screen name="Notificaciones" component={Notificaciones} options={{ headerShown: false }}/>
           <Stack.Screen name="Eventos" component={Eventos} options={{ headerShown: false }}/>
           <Stack.Screen name="Lugares" component={Lugares} options={{ headerShown: false }}/>
           <Stack.Screen name="PuntoTuristico" component={PuntoTuristico} options={{ headerShown: false }}/>
@@ -88,5 +98,6 @@ const bt_styles = StyleSheet.create({
   },
   iconos:{
     height:30,
+    width: 30
   }
 })

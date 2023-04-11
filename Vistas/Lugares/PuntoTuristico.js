@@ -14,8 +14,8 @@ const HelloWorldSceneAR = (props) => {
         <Viro3DObject
             source={require('../../assets/3d/Tuerca/Gear1.obj')}
             materials={["tuerca"]}
-            //animation={{name: "rotate", run: true, loop: true}}
-            position={[-25, -10, 30]}
+            animation={{name: "rotate", run: true, loop: true}}
+            position={[0, -10,-50]}
             scale={[2,2,2]}
             rotation={[1, 1, 0]}
             type="OBJ"
@@ -25,7 +25,7 @@ const HelloWorldSceneAR = (props) => {
             source={require('../../assets/3d/PS1MemoryCard_OBJ/MemoryCard.obj')}
             materials={["memoryCard"]}
             //animation={{name: "rotate", run: true, loop: true}}
-            position={[-10, -10, 30]}
+            position={[10, -10,-50]}
             scale={[2,2,2]}
             rotation={[-5, 10, 10]}
             type="OBJ"
