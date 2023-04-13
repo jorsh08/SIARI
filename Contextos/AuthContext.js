@@ -3,7 +3,7 @@ import data from '../Data/datosLugares'
 import dataMonumentos from '../Data/datosLugaresMonumentos'
 import dataParques from '../Data/datosLugaresParques'
 import dataReacreativos from '../Data/datosLugaresRecreativos'
-
+import dataUsuario from '../Data/Perfil/Perfil'
 export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) =>  {
@@ -16,6 +16,9 @@ export const AuthProvider = ({children}) =>  {
     const [tab, setTab] = useState('Todos')
     const [buscar, setBuscar] = useState('')
     const [filtro, setFiltro] = useState(false)
+    const [usuario] = useState(dataUsuario)
+
+    console.log(dataUsuario)
 
     const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
 
@@ -79,14 +82,13 @@ export const AuthProvider = ({children}) =>  {
       setPuntoTuristicoInfo({nombre: nombre, imagen: imagen, direccion: direccion, horario: horario, informacion: informacion, tipo: tipo, ar: ar})
     }
 
-    async function cargarLugares(){
-      const res = await fetch('http://alexramval.pythonanywhere.com/turismo/getUbicaciones')
-      const data = await res.json()
-    }
+    
 
     useEffect(()=>{
       buscando(buscar)
     },[tab])
+
+    
 
   return (
     <AuthContext.Provider value={{
@@ -97,6 +99,7 @@ export const AuthProvider = ({children}) =>  {
         filtro,
         tabs,
         tab,
+        usuario,
         ocultarInfoPunto,
         setTab,
         setContenedorLista,

@@ -12,7 +12,7 @@ const ListadoEventos = () => {
                 <Pressable key={element.id} >
                     <View  style={{flexDirection: 'row', width: '85%',marginLeft:'7.5%',paddingBottom:25,Height:'20%'}}>
                         <View style={{flex:1, alignItems:'flex-start', justifyContent:'flex-start'}}>
-                            <Image style={styles.imagenEvento} source={{uri: element.imagen}}/>
+                            {/*<Image style={styles.imagenEvento} source={{uri: element.multimedio[0]}}/>*/}
                         </View>
                         <View style={{flex:2, flexDirection: 'column'}}>
                             <View style={{flex:1}}>

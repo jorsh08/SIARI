@@ -22,7 +22,6 @@ export const EventosProvider = ({children}) => {
 
     const handleTab = (tab) => {
         setTab(tab)
-        
     }
     
     const buscando = texto => {
@@ -58,6 +57,12 @@ export const EventosProvider = ({children}) => {
         }
     }
 
+    async function cargarLugares(){
+        const res = await fetch('http://alexramval.pythonanywhere.com/turismo/getUbicaciones')
+        const data = await res.json()
+        //setEventos(data)
+      }
+
     function sMarcadores () {
       let marcadores = {};
       let iC=0;
@@ -91,6 +96,12 @@ export const EventosProvider = ({children}) => {
     useEffect(()=>{
         buscando(buscar)
     },[Tab])
+
+    
+  
+      useEffect(()=>{
+          cargarLugares()
+      },[])
 
     return (
         <contextoEventos.Provider 
