@@ -24,7 +24,7 @@ const HelloWorldSceneAR = (props) => {
         <Viro3DObject
             source={require('../../assets/3d/PS1MemoryCard_OBJ/MemoryCard.obj')}
             materials={["memoryCard"]}
-            //animation={{name: "rotate", run: true, loop: true}}
+            animation={{name: "rotate", run: true, loop: true}}
             position={[10, -10,-50]}
             scale={[2,2,2]}
             rotation={[-5, 10, 10]}
@@ -117,8 +117,9 @@ ViroAnimations.registerAnimations({
       properties: {
         rotateY: "-=90",
         rotateX: '+=10',
+        rotateZ: '*=2'
       },
-      duration: 1000, //.25 seconds
+      duration: 2000, //.25 seconds
     },
   });
 
