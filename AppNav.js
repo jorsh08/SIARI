@@ -17,6 +17,7 @@ import PerfilEventos from './Vistas/Perfil/Eventos/Eventos'
 import PerfilUbicaciones from './Vistas/Perfil/Ubicaciones/Ubicaciones'
 import Notificaciones from './Vistas/Notificaciones/Notificaciones';
 import EditarPerfil from './Vistas/Perfil/EditarPerfil';
+import Persona from './Vistas/Persona/Persona';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -87,6 +88,7 @@ export default function AppNav() {
           <Stack.Screen name="PerfilEventos" component={PerfilEventos} options={{ headerShown: false }} />
           <Stack.Screen name="PerfilUbicaciones" component={PerfilUbicaciones} options={{ headerShown: false }} />
           <Stack.Screen name="EditarPerfil" component={EditarPerfil} options={{ headerShown: false }} />
+          <Stack.Screen name="Persona" component={Persona} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
   )

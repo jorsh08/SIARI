@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { colores } from '../../Constantes/tema'
 
-const Lugar = ({nombre, imagen, persona, direccion, horario, tipo}) => {
+const Lugar = ({nombre, imagen, direccion, horario, tipo}) => {
   return (
     <View style={styles.contenedor}>
         {/*Imagen del lugar */}

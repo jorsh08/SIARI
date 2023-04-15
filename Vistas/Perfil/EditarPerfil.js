@@ -19,48 +19,31 @@ const EditarPerfil = () => {
      
       <View style={{flexDirection: 'row', justifyContent: 'center'}}>
         <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 250, height: 250}}>
-          {/*<Image 
-            source={require('../../assets/Usuario/Perfil.png')}
+          <Image 
+            source={{uri: usuario.imagen}}
             resizeMode='contain'
-  style={{width: 200, height: 200, borderRadius: 100}}/>*/}
+            style={{width: 200, height: 200, borderRadius: 100}}/>
         </View>
       </View>
 
-      <View style={{flexDirection: 'row', justifyContent: 'center', marginVertical: 10}}>
-          <View style={{flexDirection: 'column', width: 50, height: 50}}>
-            {/*<Image 
-              source={require('../../assets/Usuario/Nombre.png')}
-              resizeMode='contain'
-              style={{width: 50, height: 63}}/>*/}
-          </View>
-          <View style={{flexDirection: 'column', justifyContent: 'space-between', width: 200, height: 50}}>
-            <View style={{flexDirection: 'row',}}>
-              <View style={{ width: 200, height: 49}}>
-                <TextInput value={nombre} style={{color: colores.Secundario}} onChange={()=>setNombre} placeholderTextColor="#8E796250" placeholder='Nombre...'/>
-              </View>
+      <View style={{flexDirection: 'row',  justifyContent: 'center', marginVertical: 10}}>
+          <View style={{flexDirection: 'row', width: 250, height: 65}}> 
+            <View style={{flexDirection: 'column'}}>
+              <Image
+                source={require('../../assets/Nombre.png')}
+                style={{width: 50, height: 63}}
+                resizeMode="contain"/>    
             </View>
-            <View style={{flexDirection: 'row'}}><View style={{backgroundColor: colores.Secundario, width: 200, height: 1}}></View></View>
+            <View style={{flexDirection: 'column', justifyContent: 'space-between', width: 200, height: 50}}>
+              <View style={{flexDirection: 'row',}}>
+                <View style={{ width: 200, height: 49}}>
+                  <TextInput value={nombre} style={{color: colores.Secundario}} onChange={()=>setNombre} placeholderTextColor="#8E796250" placeholder='Nombre...'/>
+                </View>
+              </View>
+              <View style={{flexDirection: 'row'}}><View style={{backgroundColor: colores.Secundario, width: 200, height: 1}}></View></View>
+            </View>
           </View>
       </View>
-
-      <View style={{flexDirection: 'row', justifyContent: 'center', marginVertical: 10}}>
-          <View style={{flexDirection: 'column', width: 50, height: 50}}>
-            {/*<Image 
-              source={require('../../assets/Usuario/Usuario.png')}
-              resizeMode='contain'
-              style={{width: 50, height: 63}}/>*/}
-          </View>
-          <View style={{flexDirection: 'column', justifyContent: 'space-between', width: 200, height: 50}}>
-            <View style={{flexDirection: 'row',}}>
-              <View style={{ width: 200, height: 49}}>
-                <TextInput value={nombre} style={{color: colores.Secundario}} onChange={()=>setNombre} placeholderTextColor="#8E796250" placeholder='Usuario...'/>
-              </View>
-            </View>
-            <View style={{flexDirection: 'row'}}><View style={{backgroundColor: colores.Secundario, width: 200, height: 1}}></View></View>
-          </View>
-      </View>
-      
-      
 
       <View style={{flexDirection: 'row', justifyContent: 'center', marginVertical: 30}}>
           <View style={{flexDirection: 'column', width: 270, height: 50, justifyContent: 'center'}}>
