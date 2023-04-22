@@ -30,6 +30,16 @@ const HelloWorldSceneAR = (props) => {
             rotation={[-5, 10, 10]}
             type="OBJ"
         />
+
+        <Viro3DObject
+            source={require('../../assets/3d/Avatar/AvatarOBJ.obj')}
+            materials={["avatar"]}
+            animation={{name: "rotate", run: true, loop: true}}
+            position={[10, -10,-50]}
+            scale={[2,2,2]}
+            rotation={[-5, 10, 10]}
+            type="OBJ"
+        />
     </ViroARScene>
   );
 };
@@ -46,6 +56,13 @@ ViroMaterials.createMaterials({
         lightingModel: "Blinn",
         diffuseTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Diffuse.png'),
         specularTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Specular.png'),
+        writesToDepthBuffer: true,
+        readsFromDepthBuffer: true,
+      },
+      avatar: {
+        lightingModel: "Blinn",
+        diffuseTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
+        specularTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
         writesToDepthBuffer: true,
         readsFromDepthBuffer: true,
       },
