@@ -18,6 +18,12 @@ import PerfilUbicaciones from './Vistas/Perfil/Ubicaciones/Ubicaciones'
 import Notificaciones from './Vistas/Notificaciones/Notificaciones';
 import EditarPerfil from './Vistas/Perfil/EditarPerfil';
 import Persona from './Vistas/Persona/Persona';
+import AlvaroObregon from './Vistas/Modelos3D/AlvaroObregon'
+import Bibloteca from './Vistas/Modelos3D/Bibloteca'
+import Catedral from './Vistas/Modelos3D/Catedral'
+import Palacio from './Vistas/Modelos3D/Palacio'
+import RelojMundial from './Vistas/Modelos3D/RelojMundial'
+import RelojSol from './Vistas/Modelos3D/RelojSol'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -88,6 +94,12 @@ export default function AppNav() {
           <Stack.Screen name="PerfilEventos" component={PerfilEventos} options={{ headerShown: false }} />
           <Stack.Screen name="PerfilUbicaciones" component={PerfilUbicaciones} options={{ headerShown: false }} />
           <Stack.Screen name="EditarPerfil" component={EditarPerfil} options={{ headerShown: false }} />
+          <Stack.Screen name="AlvaroObregon" component={AlvaroObregon} options={{ headerShown: false }} />
+          <Stack.Screen name="Bibloteca" component={Bibloteca} options={{ headerShown: false }} />
+          <Stack.Screen name="Catedral" component={Catedral} options={{ headerShown: false }} />
+          <Stack.Screen name="Palacio" component={Palacio} options={{ headerShown: false }} />
+          <Stack.Screen name="RelojMundial" component={RelojMundial} options={{ headerShown: false }} />
+          <Stack.Screen name="RelojSol" component={RelojSol} options={{ headerShown: false }} />
           <Stack.Screen name="Persona" component={Persona} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>

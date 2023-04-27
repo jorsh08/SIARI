@@ -10,7 +10,7 @@ const Lugar = ({nombre, imagen, direccion, horario, tipo}) => {
             <Image
                 source={{uri: imagen}}
                 style={styles.imagen}
-                resizeMode="contain"/>
+                />
         </View>
         {/*Informacion del lugar */}
         <View style={styles.contenedorInformacion}>
@@ -101,9 +101,5 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         borderRadius: 100,
     },
-    img: {
-        flexDirection: 'column',
-        height: 125, 
-        justifyContent: 'center',
-    }
+    
 })

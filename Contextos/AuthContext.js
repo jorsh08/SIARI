@@ -1,115 +1,38 @@
 import React, {createContext, useEffect, useState} from 'react'
-import data from '../Data/datosLugares'
-import dataMonumentos from '../Data/datosLugaresMonumentos'
-import dataParques from '../Data/datosLugaresParques'
-import dataReacreativos from '../Data/datosLugaresRecreativos'
 import dataUsuario from '../Data/Perfil/Perfil'
+
 export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) =>  {
 
-    const [lugar, setLugar] = useState([])
-    const [contenedorInformacion, setContenedorLista] = React.useState(false)
-    const [puntoTuristico, setPuntoTuristicoInfo] = React.useState({})
-    const [lista, setLista] = React.useState(data)
-    const [tabs] = useState(['Todos', 'Parques', 'Monumentos', 'Recreativos'])
-    const [tab, setTab] = useState('Todos')
-    const [buscar, setBuscar] = useState('')
-    const [filtro, setFiltro] = useState(false)
+    const [NombreUbicaciones] = useState({8: 'AlvaroObregon', 9: 'RelojSol', 10: 'RelojMundial', 11:'Palacio', 12:'Bibloteca', 13: 'Catedral'})
+    const [informacion, setInformacion] = React.useState({})
+    const [ubicaciones, setUbicaciones] = React.useState()
     const [usuario] = useState(dataUsuario)
 
-    console.log(dataUsuario)
-
-    const handleFiltro = () => {filtro ? setFiltro(false):setFiltro(true) }
-
-    const handleTab = (tab) => {
-      setTab(tab)
-      ocultarInfoPunto()
-    }
-
-    const buscando = texto => {
-      if (texto == ''){
-          if (tab == 'Recreativos'){
-              setLista(dataReacreativos)
-          }
-          if (tab == 'Parques'){
-              setLista(dataParques)
-          }
-          if (tab == 'Monumentos'){
-              setLista(dataMonumentos)
-          }
-          if (tab == 'Todos'){
-              setLista(data)
-          }
-      }else{
-          if (tab == 'Recreativos'){
-              let auxList = dataReacreativos.filter(item => {
-                  return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-              })
-              setLista(auxList)
-          }
-          if (tab == 'Parques'){
-              let auxList = dataParques.filter(item => {
-                  return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-              })
-              setLista(auxList)
-          }
-          if (tab == 'Monumentos'){
-              let auxList = dataMonumentos.filter(item => {
-                  return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-              })
-              setLista(auxList)
-          }
-          if (tab == 'Todos'){
-              let auxList = data.filter(item => {
-                  return item.nombre.toLowerCase().indexOf(texto.toLowerCase())>-1
-              })
-              setLista(auxList)
-          }
-          
-      }
-    }
 
     const ocultarInfoPunto = () => {
-        setContenedorLista(false)
-        setPuntoTuristicoInfo('')
-        setFiltro(false)
+        setInformacion({nombre: null, imagen: null, info: false})
     }
 
-    async function mostrarInformacion(imagen, nombre, direccion, horario, informacion, tipo, ar){
-      setContenedorLista(true)
-      setFiltro(false)
-      setPuntoTuristicoInfo({nombre: nombre, imagen: imagen, direccion: direccion, horario: horario, informacion: informacion, tipo: tipo, ar: ar})
+    const cargarLugares = async () => {
+        const data = await fetch('https://alexramval.pythonanywhere.com/turismo/getRealidad')
+        const res = await data.json()
+        setUbicaciones(res)
     }
-
-    
-
+   
     useEffect(()=>{
-      buscando(buscar)
-    },[tab])
-
-    
+        cargarLugares();
+    },[])
 
   return (
     <AuthContext.Provider value={{
-        contenedorInformacion,
-        lista,
-        puntoTuristico,
-        buscar,
-        filtro,
-        tabs,
-        tab,
+        informacion,
+        ubicaciones,
         usuario,
+        NombreUbicaciones,
         ocultarInfoPunto,
-        setTab,
-        setContenedorLista,
-        setPuntoTuristicoInfo,
-        setFiltro,
-        setBuscar,
-        buscando,
-        handleFiltro,
-        handleTab,
-        mostrarInformacion
+        setInformacion,
     }}>
         {children}
     </AuthContext.Provider>

@@ -21,7 +21,6 @@ const EditarPerfil = () => {
         <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 250, height: 250}}>
           <Image 
             source={{uri: usuario.imagen}}
-            resizeMode='contain'
             style={{width: 200, height: 200, borderRadius: 100}}/>
         </View>
       </View>

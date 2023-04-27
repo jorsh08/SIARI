@@ -10,7 +10,7 @@ const Evento = ({nombre, fecha, hora, direccion, estado, imagen}) => {
             <Image
                 source={{uri: imagen}}
                 style={styles.img}
-                resizeMode="contain"/>
+                />
         </View>
         <View style={styles.contenedorInformacion}>
             <View style={styles.titulo}>
