@@ -1,6 +1,56 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
-const PuntoTuristico = ({ navigation, route }) => {
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import React, {useEffect, useState} from 'react'
+import { ViroARScene,ViroText, ViroMaterials, ViroAnimations,ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
+
+const HelloWorldSceneAR = (props) => {
+  const [text, setText] = useState('Iniciando AR...');
+
+  function onInitialized(state, reason) {
+  }
+
+  return (
+    <ViroARScene onTrackingUpdated={onInitialized}>
+        <ViroAmbientLight color={'#FFFFFF'}/>
+        <Viro3DObject
+            source={require('../../assets/3d/Tuerca/Gear1.obj')}
+            materials={["tuerca"]}
+            animation={{name: "rotate", run: true, loop: true}}
+            position={[0, -10,-50]}
+            scale={[2,2,2]}
+            rotation={[1, 1, 0]}
+            type="OBJ"
+        />
+
+        <Viro3DObject
+            source={require('../../assets/3d/PS1MemoryCard_OBJ/MemoryCard.obj')}
+            materials={["memoryCard"]}
+            animation={{name: "rotate", run: true, loop: true}}
+            position={[10, -10,-50]}
+            scale={[2,2,2]}
+            rotation={[-5, 10, 10]}
+            type="OBJ"
+        />
+    </ViroARScene>
+  );
+};
+
+ViroMaterials.createMaterials({
+    memoryCard: {
+      lightingModel: "Blinn",
+      diffuseTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_C.jpg'),
+      specularTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_S.jpg'),
+      writesToDepthBuffer: true,
+      readsFromDepthBuffer: true,
+    },
+    tuerca: {
+        lightingModel: "Blinn",
+        diffuseTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Diffuse.png'),
+        specularTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Specular.png'),
+        writesToDepthBuffer: true,
+        readsFromDepthBuffer: true,
+      },
+ });
+
 
 
     const [puntoTuristico, setpuntoTuristico] = useState({})
