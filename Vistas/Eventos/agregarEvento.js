@@ -244,13 +244,13 @@ const agregarEvento = ({eventos, tEventos, navigation}) => {
                                     
                                     <TouchableOpacity onPress={() => {setOpenF(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row'}}>
-                                            <Image source={require('./icons/calendar.png')}/>
+                                            <Image source={require('../../assets/calendar.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.fechaS}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => {setOpenHI(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row', marginTop: 5}}>
-                                            <Image source={require('./icons/clock.png')}/>
+                                            <Image source={require('../../assets/clock.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.horaIS}</Text>
                                         </View>
                                     </TouchableOpacity>
