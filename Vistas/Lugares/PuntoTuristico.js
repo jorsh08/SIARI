@@ -1,60 +1,23 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React, {useEffect, useState} from 'react'
-import { ViroARScene,ViroText, ViroMaterials, ViroAnimations,ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import SiliderItem from './SiliderItem'
+const PuntoTuristico = ({ navigation, route }) => {
 
-const HelloWorldSceneAR = (props) => {
-  const [text, setText] = useState('Iniciando AR...');
-
-  function onInitialized(state, reason) {
-  }
-
-  return (
-    <ViroARScene onTrackingUpdated={onInitialized}>
-        <ViroAmbientLight color={'#FFFFFF'}/>
-        <Viro3DObject
-            source={require('../../assets/3d/Tuerca/Gear1.obj')}
-            materials={["tuerca"]}
-            animation={{name: "rotate", run: true, loop: true}}
-            position={[0, -10,-50]}
-            scale={[2,2,2]}
-            rotation={[1, 1, 0]}
-            type="OBJ"
-        />
-
-        <Viro3DObject
-            source={require('../../assets/3d/PS1MemoryCard_OBJ/MemoryCard.obj')}
-            materials={["memoryCard"]}
-            animation={{name: "rotate", run: true, loop: true}}
-            position={[10, -10,-50]}
-            scale={[2,2,2]}
-            rotation={[-5, 10, 10]}
-            type="OBJ"
-        />
-    </ViroARScene>
-  );
-};
-
-ViroMaterials.createMaterials({
-    memoryCard: {
-      lightingModel: "Blinn",
-      diffuseTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_C.jpg'),
-      specularTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_S.jpg'),
-      writesToDepthBuffer: true,
-      readsFromDepthBuffer: true,
-    },
-    tuerca: {
-        lightingModel: "Blinn",
-        diffuseTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Diffuse.png'),
-        specularTexture: require('../../assets/3d/Tuerca/textures/Gear_1_Specular.png'),
-        writesToDepthBuffer: true,
-        readsFromDepthBuffer: true,
-      },
- });
-
-
-
+    const data = [
+        'https://www.cinepremiere.com.mx/wp-content/uploads/2021/06/los_padrinos_magicos_cinepremiere_02.jpg',
+        'https://cdn.shopify.com/s/files/1/0025/9384/9457/articles/fairly-odd-parents.jpg?v=1647633110&width=2048'
+    ]
+    const [imagenActive, setImagenActive] = useState(0)
     const [puntoTuristico, setpuntoTuristico] = useState({})
 
+    const onchange = (nativeEvent) => {
+        if (nativeEvent) {
+            const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width)
+            if (slide != imagenActive) {
+                setImagenActive(slide)
+            }
+        }
+    }
     useEffect(() => {
         setpuntoTuristico(route.params)
     }, [route])
@@ -74,14 +37,27 @@ ViroMaterials.createMaterials({
                     </View>
                 </View>
 
-                <View style={[styles.contenedorPuntoTuristico, { flexDirection: 'column' }]}>
+                <View style={[styles.contenedorPuntoTuristico, { marginVertical: 50 }, { flexDirection: 'column' }]}>
                     <View style={{ flexDirection: 'column' }}>
-                        <View style={{ width: '100%', height: 300, flexDirection: 'row' }}>
-
-                            
-
+                        <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'column' }}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <FlatList
+                                        data={data}
+                                        onScroll={({ nativeEvent }) => onchange(nativeEvent)}
+                                        renderItem={(item) => <SiliderItem multimedio={item.item} />}
+                                        horizontal
+                                        pagingEnabled
+                                        snapToAlignment='center'
+                                        showsHorizontalScrollIndicator={false}
+                                    />
+                                </View>
+                                <View style={{ flexDirection: 'row', justifyContent: 'center', margin: 10 }}>
+                                    {data.map((e, index) => (<View key={e} style={imagenActive == index ? styles.dotActive : styles.dot} />))}
+                                </View>
+                            </View>
                         </View>
-                        <View style={[{ width: '100%', height: 300 }, { flexDirection: 'row' }]}>
+                        <View style={[{ width: '100%', height: 300}, { flexDirection: 'row' }]}>
                             <View style={[styles.datosPuntosTuristicos, { flexDirection: 'column' }]}>
                                 <Text>{puntoTuristico.direccion}</Text>
                                 <Text>{puntoTuristico.horario}</Text>
@@ -120,7 +96,7 @@ const styles = StyleSheet.create({
         margin: '3%'
     },
     contenedorPuntoTuristico: {
-        width: '90%',
+        width: '100%',
         height: '40%',
         marginTop: '3%'
     },
@@ -151,6 +127,20 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         textAlignVertical: 'center',
         textAlign: 'center',
-    }
+    },
+    dotActive: {
+        width: 12,
+        height: 12,
+        backgroundColor: 'green',
+        borderRadius: 6,
+        marginHorizontal: 5
+      },
+      dot: {
+        width: 12,
+        height: 12,
+        backgroundColor: 'gray',
+        borderRadius: 6,
+        marginHorizontal: 5
+      }
 })
 export default PuntoTuristico

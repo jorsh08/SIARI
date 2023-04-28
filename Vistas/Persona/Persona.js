@@ -12,10 +12,7 @@ const Persona = () => {
         <View style={{flexDirection:'row', justifyContent: 'center', backgroundColor: 'red'}}>
             <View style={{flexDirection: 'column', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', justifyContent: 'center',width: 200, height: 200, alignItems: 'center', backgroundColor: 'green'}}>
-                <Image
-                source={require('../../assets/Perfil.png')}
-                resizeMode='contain'
-                style={{width: 150, height: 150, borderRadius: 100}}/>
+                
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'center',width: 300, height: 100, alignItems: 'center', backgroundColor: 'yellow'}}>
                 <View style={{flexDirection:'column', backgroundColor: 'brown', width: 200, alignItems: 'center'}}>
