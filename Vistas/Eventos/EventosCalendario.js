@@ -25,7 +25,26 @@ const EventosCalendario = () => {
             <View style={{justifyContent: 'center', backgroundColor: 'blue'}}>
                 {(marcadores.length < 0) ? (<View></View>) : (
                         <Calendar
-                        theme={styles.calendarTheme}
+                        theme={{
+                            calendarBackground: '#efeae4',
+                            monthTextColor: '#8e7962',
+                            textMonthFontSize: 24,
+                            textSectionTitleColor: '#5c4f40',
+                            dayTextColor: '#5c4f40',
+                            textDayFontWeight: '500',
+                            textDayFontSize: 16,
+                            textDayHeaderFontSize: 18,
+                            textDisabledColor: '#9c8e7e',
+                            arrowColor:'#5c4f40',
+                            'stylesheet.calendar.main': {
+                                monthView: {
+                                    borderRadius: 25,
+                                    backgroundColor:'#ecddcc'
+                                }
+                            },
+                            todayBackgroundColor:'#f29c92',
+                            todayTextColor:'#efeae4',
+                        }}
                         markingType={'multi-dot'}
                         markedDates={marcadores}/>
                 )}
