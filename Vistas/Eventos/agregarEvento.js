@@ -105,7 +105,7 @@ const AgregarEvento = ({eventos, tEventos}) => {
   }
 
   const submit = () => {
-    VA = valid();
+    let VA = valid();
     console.log(ubiSelected)
     if(VA){
         var xhr = new XMLHttpRequest();
@@ -126,7 +126,7 @@ const AgregarEvento = ({eventos, tEventos}) => {
   }
   let valid = () => {
     setValidar(true);
-    valido = true;
+    let valido = true;
     if (nombre==''){ setNombreV(true); valido=false;}else {setNombreV(false);}
     if (descripcion.length<=0){ setDescripcionV(true); valido=false}else {setDescripcionV(false);}
     if (ubiSelected==-1){ setUbicacionV(true); valido=false}else {setUbicacionV(false);}
@@ -142,7 +142,7 @@ const AgregarEvento = ({eventos, tEventos}) => {
   }
 
   const validFecha = () => {
-    retorno = false;
+    let retorno = false;
     fechas.map((fecha) => {
         if (fecha.fechaV)
             retorno = true;
@@ -245,18 +245,19 @@ const AgregarEvento = ({eventos, tEventos}) => {
                                     
                                     <TouchableOpacity onPress={() => {setOpenF(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row'}}>
-                                            {/*<Image source={require('../../icons/calendar.png')}/>*/}
+                                            <Image source={require('../../assets/calendar.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.fechaS}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => {setOpenHI(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row', marginTop: 5}}>
-                                            {/*<Image source={require('./icons/clock.png')}/>*/}
+                                            <Image source={require('../../assets/clock.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.horaIS}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => {setOpenHF(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row', marginTop: 5}}>
+                                        <Image source={require('../../assets/clock.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.horaFS}</Text>
                                         </View>
                                     </TouchableOpacity >
