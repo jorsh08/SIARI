@@ -10,6 +10,6 @@ export const colores = {
 export const botones = {
     s: 60,
     m: 80,
-    l: 100,
-    xl: 120,
+    l: 120,
+    xl: 200,
 }

@@ -24,7 +24,8 @@ import Catedral from './Vistas/Modelos3D/Catedral'
 import Palacio from './Vistas/Modelos3D/Palacio'
 import RelojMundial from './Vistas/Modelos3D/RelojMundial'
 import RelojSol from './Vistas/Modelos3D/RelojSol'
-
+import AgregarEvento from './Vistas/Eventos/AgregarEvento';
+import AgregarUbicacion from './Vistas/Eventos/AgregarUbicacion';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -101,6 +102,8 @@ export default function AppNav() {
           <Stack.Screen name="RelojMundial" component={RelojMundial} options={{ headerShown: false }} />
           <Stack.Screen name="RelojSol" component={RelojSol} options={{ headerShown: false }} />
           <Stack.Screen name="Persona" component={Persona} options={{ headerShown: false }} />
+          <Stack.Screen name="AgregarEvento" component={AgregarEvento} options={{ headerShown: false }} />
+          <Stack.Screen name="AgregarUbicacion" component={AgregarUbicacion} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
   )

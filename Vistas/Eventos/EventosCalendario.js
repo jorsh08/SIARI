@@ -3,7 +3,8 @@ import { LocaleConfig } from 'react-native-calendars'
 import { StyleSheet, Text, ScrollView, View } from 'react-native'
 import React, {useContext} from 'react'
 import { contextoEventos } from '../../Contextos/Eventos';
-
+import Filtro from './Filtro';
+import Tabs from './Tabs';
 
 LocaleConfig.locales['Ev'] = {
     monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
@@ -31,6 +32,10 @@ const EventosCalendario = () => {
             </View>
         <View style={{ flex: 5, alignItems: 'center' }}>
             <Text style={{ color: '#F85D5A', fontSize: 26, marginVertical: 15 }}>Agenda</Text>
+        </View>
+        <View style={{alignItems: 'center', marginBottom: 20}}>
+            <Filtro/>
+            <Tabs/>
         </View>
         {eventos.map((evento, e) => (
             <View key={evento.id} style={{  flex: 1, width: '90%', height: '50%', backgroundColor: '#ecddcc', flexDirection: 'row', borderRadius: 50, marginBottom: '5%', marginLeft:'5%' }}>

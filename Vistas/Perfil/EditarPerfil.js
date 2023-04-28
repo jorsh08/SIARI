@@ -48,12 +48,12 @@ const EditarPerfil = () => {
           <View style={{flexDirection: 'column', width: 270, height: 50, justifyContent: 'center'}}>
             <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
               <View style={{flexDirection: 'column'}}>
-                <View style={{width: botones.xl, borderRadius: 30, height: 30, backgroundColor: colores.Primario, justifyContent: 'center', alignItems: 'center'}}>
+                <View style={{width: botones.l, borderRadius: 30, height: 30, backgroundColor: colores.Primario, justifyContent: 'center', alignItems: 'center'}}>
                   <Text style={{color: colores.Ligero}}>Eliminar cuenta</Text>
                 </View>
               </View>
               <View style={{flexDirection: 'column'}}>
-              <View style={{width: botones.xl, borderRadius: 30, height: 30, backgroundColor: colores.Secundario, justifyContent: 'center', alignItems: 'center'}}>
+              <View style={{width: botones.l, borderRadius: 30, height: 30, backgroundColor: colores.Secundario, justifyContent: 'center', alignItems: 'center'}}>
                 <Text style={{color: colores.Ligero}}>Modificar</Text>
               </View>
               </View>

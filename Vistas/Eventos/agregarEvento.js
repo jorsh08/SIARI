@@ -5,35 +5,36 @@ import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { SelectList } from 'react-native-dropdown-select-list'
 import DatePicker from 'react-native-date-picker'
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker'
-
+import { useNavigation } from '@react-navigation/native';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height
 const widthC = width * 0.7;
 
-const agregarEvento = ({eventos, tEventos, navigation}) => {
-  const [nombre, onChangeTextNombre] = React.useState('');
-  const [descripcion, onChangeTextDescripcion] = React.useState('');
-  const [url, onChangeTextUrl] = React.useState('');
-  const [ubiSelected, setUbiSelected] = React.useState(-1);
-  const [categoriaSelected, setCategoriaSelected] = React.useState('');
-  const [imagenes, addImagen] = React.useState([]);
-  const [fechas, addFechas] = React.useState([{key:'1',fecha:new Date(),fechaS:'Agregar fecha',horaI:new Date(),horaIS:'Hora inicio',horaF:new Date(),horaFS:'Hora fin', fechaV:false}]);
-  const [openF, setOpenF] = React.useState(false);
-  const [openHI, setOpenHI] = React.useState(false);
-  const [openHF, setOpenHF] = React.useState(false);
-  const [fecha, setFecha] = React.useState({key:'1',fecha:new Date(),fechaS:'Agregar fecha',horaI:new Date(),horaIS:'Hora inicio',horaF:new Date(),horaFS:'Hora fin', fechaV:false});
-  const [ubicaciones, setUbicaciones] = React.useState([]);
-  const [categorias, setCategorias] = React.useState([]);
+const AgregarEvento = ({eventos, tEventos}) => {
+    const navigation = useNavigation(); 
+  const [nombre, onChangeTextNombre] = useState('');
+  const [descripcion, onChangeTextDescripcion] = useState('');
+  const [url, onChangeTextUrl] = useState('');
+  const [ubiSelected, setUbiSelected] = useState(-1);
+  const [categoriaSelected, setCategoriaSelected] = useState('');
+  const [imagenes, addImagen] = useState([]);
+  const [fechas, addFechas] = useState([{key:'1',fecha:new Date(),fechaS:'Agregar fecha',horaI:new Date(),horaIS:'Hora inicio',horaF:new Date(),horaFS:'Hora fin', fechaV:false}]);
+  const [openF, setOpenF] = useState(false);
+  const [openHI, setOpenHI] = useState(false);
+  const [openHF, setOpenHF] = useState(false);
+  const [fecha, setFecha] = useState({key:'1',fecha:new Date(),fechaS:'Agregar fecha',horaI:new Date(),horaIS:'Hora inicio',horaF:new Date(),horaFS:'Hora fin', fechaV:false});
+  const [ubicaciones, setUbicaciones] = useState([]);
+  const [categorias, setCategorias] = useState([]);
   const fechass = [
     {key:'1',fecha:'',hora:'',open:false}
   ];
-  const [nFecha, setNFecha] = React.useState(2);
-  const [imageUri, setimageUri] = React.useState('');
-  const [validar, setValidar] = React.useState(false);
-  const [nombreV, setNombreV] = React.useState(false);
-  const [descripcionV, setDescripcionV] = React.useState(false);
-  const [ubicacionV, setUbicacionV] = React.useState(false);
-  const [fechasV, setFechasV] = React.useState(false);
+  const [nFecha, setNFecha] = useState(2);
+  const [imageUri, setimageUri] = useState('');
+  const [validar, setValidar] = useState(false);
+  const [nombreV, setNombreV] = useState(false);
+  const [descripcionV, setDescripcionV] = useState(false);
+  const [ubicacionV, setUbicacionV] = useState(false);
+  const [fechasV, setFechasV] = useState(false);
   useEffect(() => {
     getUbicaciones();
     getCategorias();
@@ -155,7 +156,7 @@ const agregarEvento = ({eventos, tEventos, navigation}) => {
             <View style={{flex:1}}>
                 <View style={styles.titulo}>
                     <View style={{flex:1}}>
-                        <TouchableOpacity><Text style={{color:'#a09385', fontSize: 26, marginLeft:'20%'}}>X</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.goBack()}><Text style={{color:'#a09385', fontSize: 26, marginLeft:'20%'}}>X</Text></TouchableOpacity>
                     </View>
                     <View style={{flex:4}}>
                         <Text style={{color:'#F85D5A', fontSize: 26, }}>Nuevo evento</Text>
@@ -219,7 +220,7 @@ const agregarEvento = ({eventos, tEventos, navigation}) => {
                     {(validar && ubicacionV)?<Text style={{color:'red',zIndex:-1}}>Selcciona una ubicación</Text>:<View/>}
                     </View>
                     <View style={{alignItems:'center'}}>
-                        <TouchableOpacity style={styles.bAddUbi}>
+                        <TouchableOpacity style={styles.bAddUbi} onPress={()=>navigation.navigate('AgregarUbicacion')}>
                             <Text style={{color:'white' }}>+</Text>
                         </TouchableOpacity>
                     </View>
@@ -244,19 +245,16 @@ const agregarEvento = ({eventos, tEventos, navigation}) => {
                                     
                                     <TouchableOpacity onPress={() => {setOpenF(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row'}}>
-                                            <Image source={require('./icons/calendar.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.fechaS}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => {setOpenHI(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row', marginTop: 5}}>
-                                            <Image source={require('./icons/clock.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.horaIS}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => {setOpenHF(true),setFecha(item)}}>
                                         <View style={{flexDirection:'row', marginTop: 5}}>
-                                            <Image source={require('./icons/clock.png')}/>
                                             <Text style={{marginHorizontal:5}}>{item.horaFS}</Text>
                                         </View>
                                     </TouchableOpacity >
@@ -462,4 +460,4 @@ const styles = StyleSheet.create({
         marginRight: 5,
     }
 })
-export default agregarEvento
+export default AgregarEvento

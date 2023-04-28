@@ -12,7 +12,7 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height
 const widthC = width * 0.7;
 
-const agergarUbicacion = ({eventos, tEventos, navigation}) => {
+const AgregarUbicacion = ({eventos, tEventos, navigation}) => {
   const [nombre, onChangeTextNombre] = React.useState('');
   const [descripcion, onChangeTextDescripcion] = React.useState('');
   const [imagenes, addImagen] = React.useState([]);
@@ -129,7 +129,7 @@ const agergarUbicacion = ({eventos, tEventos, navigation}) => {
             <View style={{flex:1}}>
                 <View style={styles.titulo}>
                     <View style={{flex:1}}>
-                        <TouchableOpacity><Text style={{color:'#a09385', fontSize: 26, marginLeft:'20%'}}>X</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{color:'#a09385', fontSize: 26, marginLeft:'20%'}}>X</Text></TouchableOpacity>
                     </View>
                     <View style={{flex:4, alignItems:'center'}}>
                         <Text style={{color:'#F85D5A', fontSize: 26, }}>Nueva ubicación</Text>
@@ -443,4 +443,4 @@ const styles = StyleSheet.create({
         elevation: 4,
     }
 })
-export default agergarUbicacion
+export default AgregarUbicacion

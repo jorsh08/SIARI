@@ -1,6 +1,9 @@
 import { Text, View, Image, StyleSheet, Pressable } from 'react-native'
 import React, {useContext} from 'react'
 import { contextoEventos } from '../../Contextos/Eventos';
+import Filtro from './Filtro';
+import Tabs from './Tabs';
+import BotonAgregarEvento from './BotonAgregarEvento';
 
 const ListadoEventos = () => {
     
@@ -8,6 +11,11 @@ const ListadoEventos = () => {
 
   return (
         <View style={{width: '100%', height: '100%', marginTop: 10}}>
+            <View style={{alignItems: 'center', marginBottom: 20}}>
+                <BotonAgregarEvento/>
+                <Filtro/>
+                <Tabs/>
+            </View>
             {eventos.map(element =>(
                 <Pressable key={element.id} >
                     <View  style={{flexDirection: 'row', width: '85%',marginLeft:'7.5%',paddingBottom:25,Height:'20%'}}>

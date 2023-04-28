@@ -6,6 +6,7 @@ import EncabezadoSecundario from '../../EncabezadoSecundario'
 import Filtro from './Filtro'
 import Lista from './Lista'
 import Tabs from './Tabs'
+import BotonAgregarUbicacion from './BotonAgregarUbicacion'
 
 const Ubicaciones = () => {
   return (
@@ -13,6 +14,7 @@ const Ubicaciones = () => {
         <View style={styles.fondo}>
           <ScrollView>
               <View style={{flexDirection: 'row'}}><EncabezadoSecundario titulo={'Mis ubicaciones'}/></View>
+              <View style={{flexDirection: 'row', justifyContent: 'center'}}><BotonAgregarUbicacion/></View>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}><Filtro/></View>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}><Tabs/></View>      
               <View style={{flexDirection: 'row', justifyContent: 'center'}}><Lista/></View>                          
