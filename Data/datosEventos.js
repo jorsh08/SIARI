@@ -45,7 +45,7 @@ const eventos = [
         longitude: -109.94702115654945,
         multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
-        imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t39.30808-6/315910727_114811768111835_1566720683622016667_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Q-sPH_MK1SIAX_aYWZ6&_nc_oc=AQlcIL1KMx-fe0BwPWLks_z56TNvoDu7_q1GvpYk0hc_5v1P9xAcNXdWkTA50vvXtVxRWAOSSaveecsyYchnEh0u&_nc_ht=scontent.fcen1-1.fna&oh=00_AfBdNRsHGyiK-jxqy333DzYxDKVzrHYV5XctrmkUbtHXHw&oe=64208B12',
+        imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t39.30808-6/315910727_114811768111835_1566720683622016667_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fYMBzeaEEngAX-4qD9M&_nc_oc=AQnid8eMrwW94zl5J7oBk_vQ1mgFLaXqa5ng0PYZfzrb-Y_tjsHXmT1TLgGh-EUACWZB5ULT6zjZaN_cAYyhebRZ&_nc_ht=scontent.fcen1-1.fna&oh=00_AfAeagEJR6I06xxpEynQuCSPBKzTe_I5dYqhoQPzJExbFg&oe=6451FB52'
     },
     {
         id: 3,
@@ -77,7 +77,7 @@ const eventos = [
         longitude: -109.9408158659935,
         multimedios: [{},{},{}],
         icono: 'https://kentuckylandscape.ca/wp-content/uploads/2019/12/fb-icon.png',
-        imagen: 'https://scontent.fcen1-1.fna.fbcdn.net/v/t1.18169-9/28377448_1715725358486703_930750524001893245_n.png?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=xUvc_zHMxB4AX9VOtqL&_nc_ht=scontent.fcen1-1.fna&oh=00_AfBA1b3gfj8ps6leYbpsc4i_u2E0Lk-cah3t-_bEg5SKoA&oe=6443F0FF'
+        imagen: 'https://d1fdloi71mui9q.cloudfront.net/6AsZ6RUnTASXsQI7mVjF_icono.png'
     },
     {
         id: 8,

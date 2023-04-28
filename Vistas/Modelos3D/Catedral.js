@@ -23,6 +23,7 @@ ViroMaterials.createMaterials({
   avatar: {
     lightingModel: "Blinn",
     diffuseTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
+    specularTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },

@@ -21,7 +21,7 @@ const EventosCalendario = () => {
     const { marcadores, eventos, marcadoresC} = useContext(contextoEventos)
 
     return (
-        <View style={{ flex: 1, width: '100%', height: '100%', marginTop: 15, justifyContent: 'center'}}>
+    <View style={{ flex: 1, width: '100%', height: '100%', justifyContent: 'center'}}>
             <View style={{justifyContent: 'center', backgroundColor: 'blue'}}>
                 {(marcadores.length < 0) ? (<View></View>) : (
                         <Calendar
