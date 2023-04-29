@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react'
-
+import React, { createContext, useState, } from 'react'
+import {Text} from 'react-native'
 export const contextoNotificaciones = createContext();
 
 export const NotificacionesProvider = ({children}) => {
