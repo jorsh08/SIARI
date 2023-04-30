@@ -11,7 +11,7 @@ const Modelo3DScene = () => {
         source={require('../../assets/3d/Avatar/AvatarOBJ.obj')}
         materials={["avatar"]}
         animation={{ name: "rotate", run: true, loop: true }}
-        position={[10, -30, -150]}
+        position={[10, -30, -50]}
         scale={[5, 5, 5]}
         type="OBJ"
       />
@@ -23,7 +23,6 @@ ViroMaterials.createMaterials({
   avatar: {
     lightingModel: "Blinn",
     diffuseTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
-    specularTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },
