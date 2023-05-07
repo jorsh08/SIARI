@@ -1,20 +1,25 @@
-import { StyleSheet, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, View, PermissionsAndroid, TouchableOpacity, Text } from 'react-native'
+import React, { useState } from 'react'
 import { ViroARScene, ViroMaterials, ViroAnimations, ViroARSceneNavigator, Viro3DObject, ViroAmbientLight } from '@viro-community/react-viro';
-
+import RNFS from 'react-native-fs';
+import { captureScreen } from 'react-native-view-shot';
 
 const Modelo3DScene = () => {
+
+  
+
   return (
     <ViroARScene>
       <ViroAmbientLight color={'#FFFFFF'} />
+      
       <Viro3DObject
-        source={require('../../assets/3d/Avatar/AvatarOBJ.obj')}
-        materials={["avatar"]}
-        animation={{ name: "rotate", run: true, loop: true }}
-        position={[10, -30, -50]}
-        scale={[5, 5, 5]}
-        type="OBJ"
-      />
+          source={require('../../assets/3d/RA-MaroCatedral/CatedralOBJ.obj')}
+          materials={["avatar"]}
+          animation={{ name: "rotate", run: true, loop: true }}
+          position={[10, -90, -300]}
+           scale={[50, 50, 50]}
+          type="OBJ"
+        />
     </ViroARScene>
   );
 };
@@ -22,13 +27,16 @@ const Modelo3DScene = () => {
 ViroMaterials.createMaterials({
   avatar: {
     lightingModel: "Blinn",
-    diffuseTexture: require('../../assets/3d/Avatar/ColorPaletteMARO.png'),
+    diffuseTexture: require('../../assets/3d/RA-MaroCatedral/TexturaCatedral.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },
 });
 
 const Catedral = () => {
+
+ 
+
   return (
     <View style={{ flexDirection: 'column', alignItems: 'center' }}>
       <View style={{ width: 300, height: 700, margin: 50 }}>
@@ -37,6 +45,9 @@ const Catedral = () => {
           initialScene={{ scene: Modelo3DScene }}
           style={{ flex: 1 }} />
       </View>
+      <TouchableOpacity >
+        <Text style={{color: 'green', fontSize: 18}}>Test</Text>
+      </TouchableOpacity>
     </View>
   )
 }

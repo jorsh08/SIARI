@@ -8,7 +8,7 @@ const Modelo3DScene = () => {
     <ViroARScene>
       <ViroAmbientLight color={'#FFFFFF'} />
       <Viro3DObject
-        source={require('../../assets/3d/Tuerca/Gear1.obj')}
+        source={require('../../assets/3d/RA-ITESCA/ITESCA-RA.obj')}
         materials={["tuerca"]}
         animation={{ name: "rotate", run: true, loop: true }}
         position={[10, -30, -150]}
@@ -22,7 +22,7 @@ const Modelo3DScene = () => {
 ViroMaterials.createMaterials({
   tuerca: {
     lightingModel: "Blinn",
-    diffuseTexture: require('../../assets/3d/Tuerca/Gear_1_BaseColor.png'),
+    diffuseTexture: require('../../assets/3d/RA-ITESCA/TexturaITESCACombinada.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },

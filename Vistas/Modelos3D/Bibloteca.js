@@ -8,10 +8,11 @@ const Modelo3DScene = () => {
     <ViroARScene>
       <ViroAmbientLight color={'#FFFFFF'} />
       <Viro3DObject
-        source={require('../../assets/3d/Circo/circustent.obj')}
-        materials={["circo"]}
-        position={[10, -30, -3050]}
-        scale={[1, 1, 1]}
+        source={require('../../assets/3d/MARO_OBJ_BIBLIO/MARO_Biblio_fbx_v2.obj')}
+        materials={["bibloteca"]}
+        position={[10, -20, -30]}
+        rotation={[0, 170, 0]}
+          scale={[200, 200, 200]}
         type="OBJ"
       />
     </ViroARScene>
@@ -19,9 +20,9 @@ const Modelo3DScene = () => {
 };
 
 ViroMaterials.createMaterials({
-  circo: {
+  bibloteca: {
     lightingModel: "Blinn",
-    diffuseTexture: require('../../assets/3d/Circo/00.png'),
+    diffuseTexture: require('../../assets/3d/MARO_OBJ_BIBLIO/ColorPaletteMARO2.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },

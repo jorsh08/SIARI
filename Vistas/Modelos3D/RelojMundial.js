@@ -8,7 +8,7 @@ const Modelo3DScene = () => {
     <ViroARScene>
       <ViroAmbientLight color={'#FFFFFF'} />
       <Viro3DObject
-         source={require('../../assets/3d/Cabeza/trump.obj')}
+         source={require('../../assets/3d/Reloj/RA-RELOJ(Modif).obj')}
         materials={["cabeza"]}
         animation={{ name: "rotate", run: true, loop: true }}
         position={[10, -30, -100]}
@@ -22,7 +22,7 @@ const Modelo3DScene = () => {
 ViroMaterials.createMaterials({
   cabeza: {
     lightingModel: "Blinn",
-    diffuseTexture: require('../../assets/3d/Cabeza/TRUMPCleanedTex.png'),
+    diffuseTexture: require('../../assets/3d/Reloj/TexturaCombinadaReloj.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },

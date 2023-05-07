@@ -8,13 +8,14 @@ const Modelo3DScene = () => {
     <ViroARScene>
       <ViroAmbientLight color={'#FFFFFF'} />
       <Viro3DObject
-        source={require('../../assets/3d/PS1MemoryCard_OBJ/MemoryCard.obj')}
+        source={require('../../assets/3d/MARO-ED/RA-EDG.obj')}
         materials={["mcard"]}
         animation={{ name: "rotate", run: true, loop: true }}
         position={[50, -50, -100]}
         scale={[5, 5, 5]}
         type="OBJ"
       />
+      
     </ViroARScene>
   );
 };
@@ -22,8 +23,7 @@ const Modelo3DScene = () => {
 ViroMaterials.createMaterials({
   mcard: {
     lightingModel: "Blinn",
-    diffuseTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_C.jpg'),
-    specularTexture: require('../../assets/3d/PS1MemoryCard_OBJ/MCard_S.jpg'),
+    diffuseTexture: require('../../assets/3d/MARO-ED/TexturaCompletaEDG.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },

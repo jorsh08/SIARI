@@ -1,0 +1,122 @@
+# Blender 3.4.1 MTL File: 'None'
+# www.blender.org
+
+newmtl Baston
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl CejasTexture
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaExtremidades
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaFlor1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaFlor2
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaFlor3
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaOjos
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaPiel
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl TexturaPuas
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl aiStandardSurface3
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl aiStandardSurface6
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Hector/Desktop/3D-Cielo/Reloj/TexturaCombinadaReloj.png
+
+newmtl lambert1
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.371000 0.148000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2

@@ -8,10 +8,9 @@ const Modelo3DScene = () => {
     <ViroARScene>
       <ViroAmbientLight color={'#FFFFFF'} />
       <Viro3DObject
-        source={require('../../assets/3d/palacio/PalacioMunicipalRA.obj')}
+        source={require('../../assets/3d/RA-Monumento/OBJ-Monumento.obj')}
         materials={["bat"]}
-        //animation={{ name: "rotate", run: true, loop: true }}
-        position={[-20, -30, -30]}
+        position={[10, -10, -20]}
         rotation={[0, 190, 0]}
         scale={[5, 5, 5]}
         type="OBJ"
@@ -23,8 +22,8 @@ const Modelo3DScene = () => {
 
 ViroMaterials.createMaterials({
   bat: {
-    lightingModel: "Blinn",
-    diffuseTexture: require('../../assets/3d/palacio/PaletaColoresCompleto.png'),
+    lightingModel: "Phong",
+    diffuseTexture: require('../../assets/3d/RA-Monumento/TexturaCombinada.png'),
     writesToDepthBuffer: true,
     readsFromDepthBuffer: true,
   },
