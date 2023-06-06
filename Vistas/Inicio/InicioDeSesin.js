@@ -1,8 +1,9 @@
 import * as React from "react";
+import { useContext } from "react";
 import { Image, StyleSheet, Text, View, Pressable, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-
+import { AuthContext } from "../../Contextos/AuthContext";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 const InicioDeSesin = () => {
@@ -11,8 +12,16 @@ const InicioDeSesin = () => {
   const [pass, onChangeTextPass] = React.useState("");
   const [number, onChangeNumber] = React.useState(null);
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
-
-
+  const {login} = useContext(AuthContext);
+  React.useEffect (() => {
+    handleGetToken()
+  })
+  const handleGetToken = async () => {
+    console.log('holaGente')
+    const token = await AsyncStorage.getItem('AccessToken')
+    console.log(token)
+  }
+  
 
   return (
     <SafeAreaView style={styles.inicioDeSesinView}>
@@ -86,7 +95,7 @@ const InicioDeSesin = () => {
         </Text>
       </View>
       
-      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => navigation.navigate("BottomTab")}>
+      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => login(email,pass)/*navigation.navigate("BottomTab")*/}>
         <Text style={[styles.iniciarText]}>Iniciar </Text>
       </TouchableOpacity>
     </SafeAreaView>
