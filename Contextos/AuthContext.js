@@ -17,13 +17,13 @@ export const AuthProvider = ({children}) =>  {
     }
 
     const cargarLugares = async () => {
-        //const data = await fetch('https://alexramval.pythonanywhere.com/turismo/getRealidad')
-        //const res = await data.json()
-        //setUbicaciones(res)
+        const data = await fetch('https://alexramval.pythonanywhere.com/turismo/getRealidad')
+        const res = await data.json()
+        setUbicaciones(res)
     }
    
     useEffect(()=>{
-        cargarLugares();
+        //cargarLugares();
     },[])
 
   return (

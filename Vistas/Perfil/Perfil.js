@@ -1,11 +1,6 @@
 import * as React from "react";
 import { Image, StyleSheet, Text, View, Pressable, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod";
-
-
-
-
 
 const Perfil= () => {
   const navigation = useNavigation();
@@ -62,21 +57,14 @@ const Perfil= () => {
               </View>
           </View>
           <View style={styles.viewFP}>
-            <Image 
-                    style={[styles.imgFP]}
-                    height={120}
-                    width={120}
-                    resizeMode="contain"
-                    source={require("../../assets/Perfil/fotoPerfil.jpg")}/>
+            
             <TouchableOpacity style={styles.btnEditar}>
                   <Text numberOfLines={1} style={styles.txtBtns}>Editar perfil</Text>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.favoritos}>
-          <View style={styles.tituloFav}>
-            <Text style={{fontSize: 42, color: "#8E7962", fontWeight: "bold"}}>Favoritos</Text>
-          </View>
+        <View>
+          <Text>Favoritos</Text>
         </View>
     </SafeAreaView>
   )};

@@ -32,9 +32,9 @@ const Persona = () => {
                 </View>
                 </View>
             </View>
-            <View style={{flexDirection: 'row', justifyContent: 'center',width: 300, height: 800, alignItems: 'center', backgroundColor: 'blue'}}>
-                <Text>Imagen</Text>
-            </View>
+                <View style={{flexDirection: 'row', justifyContent: 'center',width: 300, height: 800, alignItems: 'center', backgroundColor: 'blue'}}>
+                    
+                </View>
             </View>
         </View>
     </View>
