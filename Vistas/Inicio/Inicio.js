@@ -17,10 +17,7 @@ const Inicio = () => {
       <Text
         style={[styles.estamosListosParaLlevarte, styles.mt11_379999999999999, styles.mb1]}
       >
-        <Text
-          style={styles.estamosListosPara}
-        >{`Estamos listos para llevarte `}</Text>
-        <Text style={styles.porCajemeText}>por Cajeme.</Text>
+        <Text style={styles.porCajemeText}>Estamos listos para llevarte por Cajeme.</Text>
       </Text>
       <View style={styles.botones}>
         <TouchableOpacity style={[styles.rectngulo4Pressable]} onPress={() => navigation.navigate("RegistroDeCuenta")}>

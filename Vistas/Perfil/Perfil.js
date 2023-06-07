@@ -1,6 +1,11 @@
-import * as React from "react";
+import React from "react";
 import { Image, StyleSheet, Text, View, Pressable, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod";
+
+
+
+
 
 const Perfil= () => {
   const navigation = useNavigation();
@@ -8,8 +13,6 @@ const Perfil= () => {
   const [pass, onChangeTextPass] = React.useState("");
   const [number, onChangeNumber] = React.useState(null);
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
-
-
 
   return (
     <SafeAreaView style={[styles.mainView]}>
@@ -63,8 +66,10 @@ const Perfil= () => {
             </TouchableOpacity>
           </View>
         </View>
-        <View>
-          <Text>Favoritos</Text>
+        <View style={styles.favoritos}>
+          <View style={styles.tituloFav}>
+            <Text style={{fontSize: 42, color: "#8E7962", fontWeight: "bold"}}>Favoritos</Text>
+          </View>
         </View>
     </SafeAreaView>
   )};

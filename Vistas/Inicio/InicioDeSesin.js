@@ -1,42 +1,19 @@
 import * as React from "react";
+import { useContext } from "react";
 import { Image, StyleSheet, Text, View, Pressable, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-
+import { AuthContext } from "../../Contextos/AuthContext";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 const InicioDeSesin =  () => {
   const navigation = useNavigation();
-  const [email, onChangeTextEmail] = React.useState("joseluis");
-  const [pass, onChangeTextPass] = React.useState("abcd1234");
+  const [email, onChangeTextEmail] = React.useState("");
+  const [pass, onChangeTextPass] = React.useState("");
+  const [number, onChangeNumber] = React.useState(null);
+  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
-        const iniciarSesion = async () => {
-        const parametros = {
-          par1: email,
-          par2: pass
-        };
-        
-        try {
-          console.log(email);
-          console.log(pass);
-          const res = await fetch('https://alexramval.pythonanywhere.com/turismo/gettoken', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              par1: "joseluis",
-              par2: "abcd1234"
-            })
-          });
-          const data = await res.json();
-          console.log(data);
-          navigation.navigate("Mapa");
-        } catch (error) {
-          console.log('Error')
-        }
 
-  }
 
   return (
     <SafeAreaView style={styles.inicioDeSesinView}>
@@ -110,8 +87,8 @@ const InicioDeSesin =  () => {
         </Text>
       </View>
       
-      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => iniciarSesion()}>
-        <Text style={[styles.iniciarText]}>Iniciar</Text>
+      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => navigation.navigate("BottomTab")}>
+        <Text style={[styles.iniciarText]}>Iniciar </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
