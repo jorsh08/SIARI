@@ -3,7 +3,6 @@ import dataUsuario from '../Data/Perfil/Perfil'
 import dataLugares from '../Data/datosLugares'
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { useNavigation } from "@react-navigation/native";
 
 export const AuthContext = createContext()
 
@@ -14,7 +13,6 @@ export const AuthProvider = ({children}) =>  {
     const [ubicaciones, setUbicaciones] = React.useState(dataLugares)
     const [usuario] = useState(dataUsuario)
     const [isLoading, setIsLoading] = useState(false);
-    const navigation = useNavigation();
 
 
     const login = (email, password) => {
@@ -44,7 +42,6 @@ export const AuthProvider = ({children}) =>  {
                     console.log(json);
                     AsyncStorage.setItem("AccessToken", json.token)
                 })
-                navigation.navigate("BottomTab")
           
     } 
     const ocultarInfoPunto = () => {

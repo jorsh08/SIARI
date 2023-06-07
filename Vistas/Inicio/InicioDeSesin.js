@@ -22,6 +22,11 @@ const InicioDeSesin = () => {
     console.log(token)
   }
   
+  const iniciar = () => {
+    login(email,pass);
+    navigation.navigate("BottomTab");
+  }
+  
 
   return (
     <SafeAreaView style={styles.inicioDeSesinView}>
@@ -95,7 +100,7 @@ const InicioDeSesin = () => {
         </Text>
       </View>
       
-      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => login(email,pass)/*navigation.navigate("BottomTab")*/}>
+      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={iniciar}>
         <Text style={[styles.iniciarText]}>Iniciar </Text>
       </TouchableOpacity>
     </SafeAreaView>
