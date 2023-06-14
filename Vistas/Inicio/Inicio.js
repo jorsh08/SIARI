@@ -1,9 +1,31 @@
 import * as React from "react";
+import { useContext, useEffect } from "react";
 import { View, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { AuthContext } from "../../Contextos/AuthContext";
 
 const Inicio = () => {
   const navigation = useNavigation();
+
+
+  const verificarSesion = async () => {
+    try {
+      const sesion = await AsyncStorage.getItem('AccessToken');
+      if (sesion) {
+        navigation.navigate("Mapa")
+      } else {
+        console.log("first") 
+        return false
+      }
+    } catch (error) {
+      console.log('Error al verificar la sesión:', error);
+    }
+  };
+
+  useEffect(()=>{
+    verificarSesion()
+  },[])
 
   return (
   <View style={styles.inicioView}>

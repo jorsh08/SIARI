@@ -4,6 +4,7 @@ import MapView, { enableLatestRenderer } from 'react-native-maps';
 import { AuthContext } from '../../Contextos/AuthContext';
 import { colores } from '../../Constantes/tema';
 import Marcador from './Marcador';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 enableLatestRenderer();
 
@@ -11,10 +12,22 @@ const Mapa = ({navigation}) => {
 
   const { informacion, ubicaciones, ocultarInfoPunto, NombreUbicaciones} = useContext(AuthContext)
 
-  const getCoordenadas = (c) => {
+  const getCoordenadas = async (c) => {
     ocultarInfoPunto()
+    const token = await AsyncStorage.getItem("AccessToken")
     console.log(c)
+    console.log(token)
   }
+
+  const eliminarItem = async () => {
+    try {
+      await AsyncStorage.removeItem('AccessToken');
+      navigation.navigate("Inicio");
+      console.log('Item eliminado exitosamente.');
+    } catch (error) {
+      console.log('Error al eliminar el item:', error);
+    }
+  };
 
   return (
     <View style={{flex:1, alignItems: 'center', justifyContent: 'flex-end'}}>
@@ -44,7 +57,9 @@ const Mapa = ({navigation}) => {
             
      </MapView>
         <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginVertical: 60}}>
-          
+          <TouchableOpacity style={{backgroundColor: '#23da31'}} onPress={()=>eliminarItem()}>
+            <Text>cerrar sesion</Text>
+          </TouchableOpacity>
           <View style={informacion.info ? styles.contenedorInformacion : styles.contenedorInformacionOculto}>
               <View style={{flexDirection: 'column', height: 125, width: 205, justifyContent: 'center'}}>
                 <View style={{flexDirection: 'row', width: 205, height: 62.5,justifyContent: 'center', alignItems: 'center'}}>

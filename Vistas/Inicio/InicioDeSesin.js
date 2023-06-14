@@ -8,12 +8,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const InicioDeSesin =  () => {
   const navigation = useNavigation();
-  const [email, onChangeTextEmail] = React.useState("");
-  const [pass, onChangeTextPass] = React.useState("");
+
   const [number, onChangeNumber] = React.useState(null);
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
+  const { login,email,pass, onChangeTextEmail, onChangeTextPass } = useContext(AuthContext)
 
-
+  const iniciarSesion = async () => {
+    let sesion = await login();
+    (sesion) ? navigation.navigate("Mapa") : alert("Credenciales invalidas"); 
+  }
 
   return (
     <SafeAreaView style={styles.inicioDeSesinView}>
@@ -66,16 +69,19 @@ const InicioDeSesin =  () => {
       <View style={[styles.rectngulo41View]} />
       <View style={[styles.lnea15View]} />
 
-      <View style={[styles.rectngulo38View, styles.mt3]}>
-        <Image
-          style={[styles.logotipoDeGoogleGlassIcon]}
-          resizeMode="contain"
-          source={require("../../assets/logotipodegoogleglass.png")}
-        />
-        <Text style={[styles.continuarConGoogle]}>
-          Continuar con Google
-        </Text>
-      </View>
+      <TouchableOpacity onPress={()=> AsyncStorage.removeItem("AccessToken")}>
+        <View style={[styles.rectngulo38View, styles.mt3]}>
+          <Image
+            style={[styles.logotipoDeGoogleGlassIcon]}
+            resizeMode="contain"
+            source={require("../../assets/logotipodegoogleglass.png")}
+          />
+          <Text style={[styles.continuarConGoogle]}>
+            Continuar con Google
+          </Text>
+        </View>
+      </TouchableOpacity>
+      
       <View style={[styles.rectngulo40View, styles.mt2]}>
         <Image
           style={[styles.logotipoDeAppleIcon]}
@@ -87,7 +93,7 @@ const InicioDeSesin =  () => {
         </Text>
       </View>
       
-      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => navigation.navigate("BottomTab")}>
+      <TouchableOpacity style={[styles.rectngulo4Pressable, styles.mt5]} onPress={() => iniciarSesion()}>
         <Text style={[styles.iniciarText]}>Iniciar </Text>
       </TouchableOpacity>
     </SafeAreaView>

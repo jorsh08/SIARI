@@ -163,13 +163,3 @@ const styles = StyleSheet.create({
 })
 
 export default Perfil
-
-
-
-
-/*Instalé
-
-npm install @react-navigation/material-top-tabs react-native-tab-view
-npm install react-native-pager-view
-*/
-
