@@ -18,10 +18,10 @@ export const AuthProvider = ({children}) =>  {
     const [pass, onChangeTextPass] = React.useState("");
 
     async function login(){
-      let result = null;
+      let result = null
       const formdata = new FormData();
-      formdata.append('par1',email);
-      formdata.append('par2',pass);
+      formdata.append('username',email);
+      formdata.append('password',pass);
       let post = {
           method: 'POST',
           body:formdata,
@@ -40,6 +40,7 @@ export const AuthProvider = ({children}) =>  {
           onChangeTextPass("")
           result = data;
         }
+
         return result;
     }
 

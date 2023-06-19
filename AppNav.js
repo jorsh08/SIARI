@@ -31,7 +31,11 @@ const Tab = createBottomTabNavigator();
 
 const BottomTab = () =>{
   return(
-  <Tab.Navigator>
+  <Tab.Navigator screenOptions={{
+    tabBarStyle: [bt_styles.tab, {zIndex: -99}],
+    tabBarShowLabel: false,
+    headerShown: false,
+  }}>
     <Tab.Screen name="Mapa" component={Mapa} options={{ 
       tabBarIcon: ({focused, color, size}) =>{
         if(focused)

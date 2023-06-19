@@ -15,7 +15,7 @@ const InicioDeSesin =  () => {
 
   const iniciarSesion = async () => {
     let sesion = await login();
-    (sesion) ? navigation.navigate("Mapa") : alert("Credenciales invalidas"); 
+    (sesion) ? navigation.navigate("BottomTab") : alert("Credenciales invalidas"); 
   }
 
   return (
